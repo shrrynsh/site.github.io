@@ -16,3 +16,8 @@ They work by finding the optimal hyperplane that best separates data points of d
 - **Margin:** Distance between hyperplane and support vectors.
 
 
+
+The decision function is:
+
+
+$$h(x) = \text{sign}(w \cdot x + b)$$
