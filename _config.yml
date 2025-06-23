@@ -2,7 +2,7 @@ title: "Shreyansh's ML/DL Blog"
 description: "Paper reviews, explanations, and experiments in ML/DL - focusing on computer vision, facial recognition, and GPU-accelerated computing"
 url: "https://shrrynsh.github.io"
 baseurl: "/site.github.io"
-theme: null # critical: disables Jekyll theme gem lookup
+theme: null
 markdown: kramdown
 permalink: pretty
 timezone: Asia/Kolkata
@@ -11,7 +11,7 @@ future: true
 # Author information
 author:
   name: "Shreyansh"
-  bio: "ML/DL researcher working with facial recognition models, GPU computing, and computer vision datasets"[1][3]
+  bio: "ML/DL researcher working with facial recognition models, GPU computing, and computer vision datasets"
   location: "India"
   links:
     - label: "GitHub"
@@ -41,8 +41,8 @@ twitter:
 social:
   name: Shreyansh
   links:
-    - https://github.com/shrrynsh
-    - https://twitter.com/yourusername
+    - "https://github.com/shrrynsh"
+    - "https://twitter.com/yourusername"
 
 # Plugins supported by GitHub Pages
 plugins:
@@ -90,28 +90,11 @@ exclude:
 include:
   - _pages
 
-# Sass/SCSS settings
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Feed settings
-feed:
-  posts_limit: 20
-  excerpt_only: true
-
-# Analytics (optional - add your tracking ID)
-# google_analytics: "UA-XXXXXXXXX-X"
-
-# Comments (optional - if you want to add Disqus)
-# disqus:
-#   shortname: "your-disqus-shortname"
-
 # Research focus areas for metadata
 research_areas:
   - "Computer Vision"
-  - "Facial Recognition"[3]
-  - "GPU Computing"[1]
+  - "Facial Recognition"
+  - "GPU Computing"
   - "Deep Learning"
-  - "Image Processing"[2]
+  - "Image Processing"
   - "Machine Learning"
