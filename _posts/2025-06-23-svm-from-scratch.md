@@ -15,7 +15,7 @@ They work by finding the optimal hyperplane that best separates data points of d
 - **Support Vectors:** Data points that lie closest to the hyperplane.
 - **Margin:** Distance between hyperplane and support vectors.
 
-### 🧮 Mathematically
+
 
 The decision function is:
 
