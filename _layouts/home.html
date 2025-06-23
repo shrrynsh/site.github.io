@@ -2,12 +2,148 @@
 layout: default
 ---
 
-<div id="main-container">
-  {% for post in site.posts %}
-    <div class="post-preview">
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-      <hr>
+<!-- Hero Section -->
+<section id="hero">
+  <img id="avatar" src="/assets/img/avatar.jpg" alt="Profile Picture" />
+  <h1>I'm <span id="typed"></span></h1>
+  <p class="intro-text">
+    I'm passionate about AI, machine learning, and computer vision - whether it's 
+    working with facial recognition models[4], organizing image datasets[1], or exploring 
+    GPU computing for ML applications[3].
+  </p>
+  <p class="contact-text">
+    I share my projects, learnings, and whatever catches my eye on social media.
+  </p>
+  <p>
+    Would love to connect! DM me <a href="https://x.com/yourusername">@yourusername</a> on X.
+  </p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>Who am I?</h2>
+  <p>I work with computer vision, facial recognition systems, and GPU-accelerated machine learning. I'm particularly interested in developing educational content[2] and working with diverse datasets including Indian facial recognition models[4].</p>
+  <p>Apart from AI research, I also enjoy building practical applications and exploring new technologies.</p>
+</section>
+
+<!-- Blog Posts Section -->
+<section id="blog-posts">
+  <h2>Latest Posts</h2>
+  <div id="main-container">
+    {% for post in site.posts limit:6 %}
+      <div class="post-preview">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        <hr>
+      </div>
+    {% endfor %}
+    
+    {% if site.posts.size > 6 %}
+      <div class="view-all">
+        <a href="/blog" class="view-all-link">View All Posts →</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Weekly Reads Section -->
+<section id="weekly-reads">
+  <h2>Weekly Reads</h2>
+  <div class="reads-grid">
+    <div class="read-card">
+      <h4>Denoising Diffusion Probabilistic Models</h4>
+      <a href="#" class="read-link">PDF</a>
     </div>
-  {% endfor %}
-</div>
+    <div class="read-card">
+      <h4>Deep Unsupervised Learning using Nonequilibrium</h4>
+      <a href="#" class="read-link">PDF</a>
+    </div>
+    <div class="read-card">
+      <h4>Facial Recognition in Computer Vision</h4>
+      <a href="#" class="read-link">PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- Include custom CSS and JS -->
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="{{ '/assets/js/home.js' | relative_url }}"></script>
+
+<style>
+/* Additional styles for blog integration */
+#blog-posts {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+#blog-posts h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-preview {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.post-preview:hover {
+  transform: translateY(-2px);
+}
+
+.post-preview h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.post-preview h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.post-preview h3 a:hover {
+  color: var(--accent);
+}
+
+.post-excerpt {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.post-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-preview hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-link {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+</style>
