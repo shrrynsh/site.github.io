@@ -109,6 +109,7 @@
       border-radius: 6px;
       transition: all 0.3s ease;
       position: relative;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     .nav-link:hover {
@@ -218,6 +219,7 @@
       color: var(--text-primary, #f4d17c);
       margin-bottom: 1rem;
       font-size: 1.1rem;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     .footer-section ul {
@@ -229,6 +231,7 @@
       margin-bottom: 0.5rem;
       color: var(--text-secondary, #e4e4e4);
       font-size: 0.9rem;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     .social-links {
@@ -245,6 +248,7 @@
       border-radius: 6px;
       transition: all 0.3s ease;
       font-size: 0.9rem;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     .social-link:hover {
@@ -258,11 +262,13 @@
       border-top: 1px solid var(--border, #333);
       color: #888;
       font-size: 0.9rem;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     .footer-tagline {
       margin-top: 0.5rem;
       font-style: italic;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     /* Light mode styles */
@@ -299,11 +305,19 @@
       }
     }
 
-    /* ===== DARK THEME OVERRIDE STYLES ===== */
-    /* Force Dark Theme Override for All Pages Including Posts */
-    body, html {
+    /* ===== ENHANCED DARK THEME OVERRIDE STYLES ===== */
+    /* Force consistent font family across all pages */
+    body, html, * {
+      font-family: 'Fira Code', 'Courier New', monospace !important;
       background-color: #1a1a1a !important;
       color: #e4e4e4 !important;
+    }
+
+    /* Ensure all text elements use the same font */
+    h1, h2, h3, h4, h5, h6, p, span, div, li, a, 
+    .post-title, .author-name, .post-content,
+    .leftpane, .rightpane, .postcontent {
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     /* Override any light theme backgrounds */
@@ -312,36 +326,103 @@
     .content,
     article,
     section,
-    .main-content {
+    .main-content,
+    .leftpane,
+    .rightpane,
+    .postcontent {
       background-color: #1a1a1a !important;
       color: #e4e4e4 !important;
     }
 
-    /* Override text colors */
+    /* Consistent heading colors matching homepage */
     h1, h2, h3, h4, h5, h6 {
       color: #f4d17c !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      font-weight: 700 !important;
     }
 
+    /* Main post title styling to match homepage */
+    .post-title, 
+    h1.post-title {
+      color: #f4d17c !important;
+      font-size: 2.5rem !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      font-weight: 800 !important;
+      line-height: 1.2 !important;
+    }
+
+    /* Body text consistency */
     p, span, div, li {
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      line-height: 1.6 !important;
     }
 
     /* Override any white/light backgrounds from includes */
     .sidebar, .left-sidebar, .right-sidebar,
     .widget, .post-meta, .author-info,
-    .leftpane, .rightpane, .postcontent {
+    .leftpane, .rightpane, .postcontent,
+    .post-box, .content-box {
       background-color: #2a2a2a !important;
       border: 1px solid #333 !important;
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
-    /* Override link colors */
+    /* Consistent link colors matching homepage */
     a {
       color: #ffc107 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      text-decoration: none !important;
     }
 
     a:hover {
       color: #f4d17c !important;
+      text-decoration: underline !important;
+    }
+
+    /* Author section styling to match homepage */
+    .author-info, .author-section {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+      border-radius: 12px !important;
+      padding: 1.5rem !important;
+    }
+
+    .author-name {
+      color: #f4d17c !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      font-weight: 700 !important;
+      font-size: 1.2rem !important;
+    }
+
+    /* Date and meta info styling */
+    .post-date, .date, time {
+      color: #888 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      font-size: 0.9rem !important;
+    }
+
+    /* Code blocks consistent with homepage */
+    code, pre {
+      background-color: #2a2a2a !important;
+      color: #ffc107 !important;
+      border: 1px solid #333 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      border-radius: 6px !important;
+    }
+
+    /* Inline code styling */
+    code {
+      padding: 0.2rem 0.4rem !important;
+      font-size: 0.9em !important;
+    }
+
+    /* Block code styling */
+    pre {
+      padding: 1rem !important;
+      overflow-x: auto !important;
+      margin: 1rem 0 !important;
     }
 
     /* Override any cards or boxes */
@@ -349,42 +430,82 @@
       background-color: #2a2a2a !important;
       border: 1px solid #333 !important;
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      border-radius: 8px !important;
     }
 
-    /* Override code blocks */
-    code, pre {
-      background-color: #2a2a2a !important;
-      color: #ffc107 !important;
-      border: 1px solid #333 !important;
-    }
-
-    /* Override any form elements */
-    input, textarea, select, button {
-      background-color: #2a2a2a !important;
-      color: #e4e4e4 !important;
-      border: 1px solid #333 !important;
-    }
-
-    /* Override blockquotes */
+    /* Blockquotes styling */
     blockquote {
       background-color: rgba(255, 193, 7, 0.1) !important;
       border-left: 4px solid #ffc107 !important;
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+      padding: 1rem !important;
+      margin: 1rem 0 !important;
+      border-radius: 0 8px 8px 0 !important;
     }
 
-    /* Override tables */
+    /* Tables styling */
     table, th, td {
       background-color: #2a2a2a !important;
       border: 1px solid #333 !important;
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+    }
+
+    /* Form elements */
+    input, textarea, select, button {
+      background-color: #2a2a2a !important;
+      color: #e4e4e4 !important;
+      border: 1px solid #333 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
 
     /* Override any remaining light elements */
     .white, .light, .bg-white, .bg-light {
       background-color: #2a2a2a !important;
       color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
     }
-  </style>
+
+    /* Avatar styling without circle */
+    .author-avatar, .post-avatar, #avatar {
+      border-radius: 8px !important;  /* Slight rounding instead of circle */
+      border: none !important;        /* Remove circular border */
+      object-fit: cover !important;
+    }
+
+    /* Ensure consistent spacing and typography */
+    .post-content p {
+      margin-bottom: 1.5rem !important;
+      line-height: 1.8 !important;
+      font-size: 1.05rem !important;
+    }
+
+    /* List styling */
+    ul, ol {
+      color: #e4e4e4 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+    }
+
+    li {
+      margin-bottom: 0.5rem !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Strong/bold text */
+    strong, b {
+      color: #f4d17c !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+    }
+
+    /* Emphasis text */
+    em, i {
+      color: #ffc107 !important;
+      font-family: 'Fira Code', 'Courier New', monospace !important;
+    }
+</style>
+
 
   <!-- Theme Detection Script -->
   <script>
