@@ -35,9 +35,9 @@
         <div class="footer-section">
           <h3>Research Focus</h3>
           <ul>
-            <li>Facial Recognition Systems[3]</li>
+            <li>Facial Recognition Systems</li>
             <li>Computer Vision</li>
-            <li>Image Dataset Organization[1]</li>
+            <li>Image Dataset Organization</li>
             <li>GPU Computing</li>
           </ul>
         </div>
@@ -45,10 +45,10 @@
         <div class="footer-section">
           <h3>Recent Work</h3>
           <ul>
-            <li>DeepPhy Dataset Analysis[3]</li>
-            <li>Indian Facial Recognition Models[3]</li>
-            <li>Educational Assessment Tools[2]</li>
-            <li>Kaggle Data Processing[1]</li>
+            <li>DeepPhy Dataset Analysis</li>
+            <li>Indian Facial Recognition Models</li>
+            <li>Educational Assessment Tools</li>
+            <li>Kaggle Data Processing</li>
           </ul>
         </div>
         
@@ -298,6 +298,102 @@
         justify-content: center;
       }
     }
+
+    /* ===== DARK THEME OVERRIDE STYLES ===== */
+    /* Force Dark Theme Override for All Pages Including Posts */
+    body, html {
+      background-color: #1a1a1a !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override any light theme backgrounds */
+    #main-container,
+    .post-content,
+    .content,
+    article,
+    section,
+    .main-content {
+      background-color: #1a1a1a !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override text colors */
+    h1, h2, h3, h4, h5, h6 {
+      color: #f4d17c !important;
+    }
+
+    p, span, div, li {
+      color: #e4e4e4 !important;
+    }
+
+    /* Override any white/light backgrounds from includes */
+    .sidebar, .left-sidebar, .right-sidebar,
+    .widget, .post-meta, .author-info,
+    .leftpane, .rightpane, .postcontent {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override link colors */
+    a {
+      color: #ffc107 !important;
+    }
+
+    a:hover {
+      color: #f4d17c !important;
+    }
+
+    /* Override any cards or boxes */
+    .card, .box, .panel, .post-box {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override code blocks */
+    code, pre {
+      background-color: #2a2a2a !important;
+      color: #ffc107 !important;
+      border: 1px solid #333 !important;
+    }
+
+    /* Override any form elements */
+    input, textarea, select, button {
+      background-color: #2a2a2a !important;
+      color: #e4e4e4 !important;
+      border: 1px solid #333 !important;
+    }
+
+    /* Override blockquotes */
+    blockquote {
+      background-color: rgba(255, 193, 7, 0.1) !important;
+      border-left: 4px solid #ffc107 !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override tables */
+    table, th, td {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+      color: #e4e4e4 !important;
+    }
+
+    /* Override any remaining light elements */
+    .white, .light, .bg-white, .bg-light {
+      background-color: #2a2a2a !important;
+      color: #e4e4e4 !important;
+    }
   </style>
+
+  <!-- Theme Detection Script -->
+  <script>
+    // Apply dark theme immediately to prevent flash
+    (function() {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.body.style.backgroundColor = '#1a1a1a';
+      document.body.style.color = '#e4e4e4';
+    })();
+  </script>
 </body>
 </html>
