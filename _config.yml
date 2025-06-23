@@ -1,7 +1,7 @@
 title: "Shreyansh's ML/DL Blog"
 description: "Paper reviews, explanations, and experiments in ML/DL"
-baseurl: "" # leave empty unless hosted at a subpath
-url: "https://your-username.github.io" # change to your actual GitHub Pages URL
+baseurl: "site.github.io" # leave empty unless hosted at a subpath
+url: "https://shrrynsh.github.io" # change to your actual GitHub Pages URL
 theme: null # critical: disables Jekyll theme gem lookup
 markdown: kramdown
 permalink: pretty
