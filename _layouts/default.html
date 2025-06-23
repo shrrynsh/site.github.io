@@ -1,11 +1,303 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% include head.html %}
 <body>
-		{% include toppane.html %}
-	<main>
-		{{ content }}
-	</main>
-		{% include bottompane.html %}
+  <!-- Enhanced Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+        <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url contains 'about' %}active{% endif %}">About</a>
+        <a href="{{ '/projects' | relative_url }}" class="nav-link {% if page.url contains 'projects' %}active{% endif %}">Projects</a>
+        <a href="{{ '/blog' | relative_url }}" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+        <a href="{{ '/datasets' | relative_url }}" class="nav-link {% if page.url contains 'datasets' %}active{% endif %}">Datasets</a>
+      </div>
+      
+      <div class="nav-extras">
+        <div class="nav-divider"></div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="bulb-icon">💡</span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-underline"></div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <!-- Enhanced Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Research Focus</h3>
+          <ul>
+            <li>Facial Recognition Systems[3]</li>
+            <li>Computer Vision</li>
+            <li>Image Dataset Organization[1]</li>
+            <li>GPU Computing</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Recent Work</h3>
+          <ul>
+            <li>DeepPhy Dataset Analysis[3]</li>
+            <li>Indian Facial Recognition Models[3]</li>
+            <li>Educational Assessment Tools[2]</li>
+            <li>Kaggle Data Processing[1]</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="https://github.com/shrrynsh" class="social-link">GitHub</a>
+            <a href="https://kaggle.com/yourusername" class="social-link">Kaggle</a>
+            <a href="https://twitter.com/yourusername" class="social-link">Twitter</a>
+            <a href="mailto:your.email@domain.com" class="social-link">Email</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ 'now' | date: "%Y" }} Shreyansh. Built with Jekyll & GitHub Pages.</p>
+        <p class="footer-tagline">Exploring the intersection of AI, Computer Vision, and Data Science</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Scripts -->
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  
+  <!-- Navigation and Footer Styles -->
+  <style>
+    /* Navigation Styles */
+    .main-nav {
+      background: var(--nav-bg, #2a2a2a);
+      border-bottom: 1px solid var(--border, #333);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      height: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-secondary, #e4e4e4);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--accent, #ffc107);
+      background: rgba(255, 193, 7, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--accent, #ffc107);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent, #ffc107);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+
+    .nav-extras {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 30px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent, #ffc107),
+        transparent
+      );
+      opacity: 0.6;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 2px solid var(--border, #333);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent, #ffc107);
+      transform: scale(1.1);
+    }
+
+    .bulb-icon {
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-underline {
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent, #ffc107),
+        transparent
+      );
+      opacity: 0.3;
+    }
+
+    /* Main Content */
+    .main-content {
+      min-height: calc(100vh - 120px);
+    }
+
+    /* Footer Styles */
+    .main-footer {
+      background: var(--card-bg, #2a2a2a);
+      border-top: 1px solid var(--border, #333);
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem 1rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--text-primary, #f4d17c);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary, #e4e4e4);
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      color: var(--accent, #ffc107);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border, #333);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .social-link:hover {
+      background: var(--accent, #ffc107);
+      color: var(--bg-dark, #1a1a1a);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border, #333);
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .footer-tagline {
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* Light mode styles */
+    [data-theme="light"] {
+      --nav-bg: #ffffff;
+      --text-secondary: #333333;
+      --border: #e0e0e0;
+      --accent: #ff6b35;
+      --card-bg: #f8f9fa;
+      --bg-dark: #ffffff;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .nav-link {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .footer-container {
+        padding: 2rem 1rem 1rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </body>
 </html>
