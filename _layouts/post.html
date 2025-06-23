@@ -2,155 +2,143 @@
 layout: default
 ---
 
-<div id="main-container" class="post-layout">
-  <!-- Left Sidebar -->
-  <aside class="left-sidebar">
+<div id="main-container" class="dark-theme-post">
+  <style>
+    /* Inline critical dark theme styles */
+    .dark-theme-post {
+      background-color: #1a1a1a !important;
+      color: #e4e4e4 !important;
+      min-height: 100vh;
+    }
+    
+    .dark-theme-post * {
+      color: inherit !important;
+    }
+    
+    .dark-theme-post h1, 
+    .dark-theme-post h2, 
+    .dark-theme-post h3, 
+    .dark-theme-post h4 {
+      color: #f4d17c !important;
+    }
+    
+    .dark-theme-post a {
+      color: #ffc107 !important;
+    }
+    
+    .dark-theme-post .sidebar,
+    .dark-theme-post .left-sidebar,
+    .dark-theme-post .right-sidebar {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+    }
+  </style>
+
+  <!-- Enhanced Post Header -->
+  <header class="post-header-enhanced">
+    <div class="author-section">
+      <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="post-avatar">
+      <div class="author-info-enhanced">
+        <h3>Shreyansh</h3>
+        <p>ML/DL researcher • Facial Recognition[8] • GPU Computing[9]</p>
+        <time>{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
+      </div>
+    </div>
+    <h1 class="post-title-enhanced">{{ page.title }}</h1>
+  </header>
+
+  <!-- Your existing includes with dark theme wrapper -->
+  <div class="includes-wrapper">
     {% include leftpane.html %}
-    
-    <!-- Additional Research Focus Section -->
-    <div class="research-focus">
-      <h3>Research Areas</h3>
-      <div class="focus-tags">
-        <span class="focus-tag">Facial Recognition</span>
-        <span class="focus-tag">GPU Computing</span>
-        <span class="focus-tag">Computer Vision</span>
-        <span class="focus-tag">Data Processing</span>
-      </div>
-    </div>
-    
-    <!-- Recent Posts Navigation -->
-    <div class="post-navigation-sidebar">
-      <h3>Recent Posts</h3>
-      <ul class="recent-posts-list">
-        {% for post in site.posts limit:5 %}
-          {% unless post.url == page.url %}
-          <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title | truncate: 40 }}</a>
-            <small>{{ post.date | date: "%b %d, %Y" }}</small>
-          </li>
-          {% endunless %}
-        {% endfor %}
-      </ul>
-    </div>
-  </aside>
-
-  <!-- Main Content Area -->
-  <main class="post-main-content">
-    <!-- Post Header with Author Info -->
-    <header class="post-header">
-      <div class="post-meta">
-        <div class="author-info">
-          <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="author-avatar">
-          <div class="author-details">
-            <span class="author-name">{{ page.author | default: "Shreyansh" }}</span>
-            <span class="author-bio">ML/DL researcher • Facial Recognition • GPU Computing</span>
-          </div>
-        </div>
-        <time class="post-date">{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
-      </div>
-      
-      <h1 class="post-title">{{ page.title }}</h1>
-      
-      {% if page.categories %}
-      <div class="post-categories">
-        {% for category in page.categories %}
-          <span class="category-badge">{{ category }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      
-      {% if page.excerpt %}
-      <div class="post-excerpt">
-        {{ page.excerpt | strip_html }}
-      </div>
-      {% endif %}
-    </header>
-
-    <!-- Post Content -->
-    <article class="post-content-wrapper">
-      {% include postcontent.html %}
-      <!-- User box and comments are included on postcontent.html-->
-    </article>
-
-    <!-- Post Footer -->
-    <footer class="post-footer">
-      {% if page.tags %}
-      <div class="post-tags">
-        <h4>Tags:</h4>
-        {% for tag in page.tags %}
-          <span class="tag">#{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      
-      <!-- Post Navigation -->
-      <div class="post-navigation">
-        {% if page.previous %}
-          <a href="{{ page.previous.url | relative_url }}" class="nav-link prev">
-            <span class="nav-direction">← Previous</span>
-            <span class="nav-title">{{ page.previous.title | truncate: 40 }}</span>
-          </a>
-        {% endif %}
-        
-        {% if page.next %}
-          <a href="{{ page.next.url | relative_url }}" class="nav-link next">
-            <span class="nav-direction">Next →</span>
-            <span class="nav-title">{{ page.next.title | truncate: 40 }}</span>
-          </a>
-        {% endif %}
-      </div>
-      
-      <!-- Related Posts based on categories -->
-      {% if page.categories %}
-      <div class="related-posts">
-        <h3>Related Posts</h3>
-        <div class="related-grid">
-          {% assign related_posts = site.posts | where_exp: "post", "post.categories contains page.categories[0]" | limit: 3 %}
-          {% for post in related_posts %}
-            {% unless post.url == page.url %}
-            <div class="related-card">
-              <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
-              <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-              <small>{{ post.date | date: "%b %d, %Y" }}</small>
-            </div>
-            {% endunless %}
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-    </footer>
-  </main>
-
-  <!-- Right Sidebar -->
-  <aside class="right-sidebar">
+    {% include postcontent.html %}
     {% include rightpane.html %}
-    
-    <!-- Technical Stack Info -->
-    <div class="tech-stack">
-      <h3>Tech Stack</h3>
-      <div class="tech-items">
-        <div class="tech-item">
-          <strong>GPU Computing:</strong> NVIDIA CUDA, Kaggle TPUs
-        </div>
-        <div class="tech-item">
-          <strong>Datasets:</strong> DeepPhy, Indian Facial Recognition
-        </div>
-        <div class="tech-item">
-          <strong>Frameworks:</strong> TensorFlow, PyTorch, OpenCV
-        </div>
-      </div>
-    </div>
-    
-    <!-- Quick Links -->
-    <div class="quick-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">← Back to Home</a></li>
-        <li><a href="{{ '/blog' | relative_url }}">All Posts</a></li>
-        <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-        <li><a href="{{ '/datasets' | relative_url }}">Datasets</a></li>
-      </ul>
-    </div>
-  </aside>
+  </div>
 </div>
 
+<style>
+.post-header-enhanced {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.author-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #ffc107;
+  object-fit: cover;
+}
+
+.author-info-enhanced h3 {
+  color: #f4d17c !important;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.author-info-enhanced p {
+  color: #ffc107 !important;
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.author-info-enhanced time {
+  color: #888 !important;
+  font-size: 0.8rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.post-title-enhanced {
+  color: #f4d17c !important;
+  font-size: 2.5rem !important;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.includes-wrapper {
+  background: #1a1a1a !important;
+}
+
+/* Force override all nested elements */
+.includes-wrapper * {
+  background-color: inherit !important;
+  color: #e4e4e4 !important;
+}
+
+.includes-wrapper h1, 
+.includes-wrapper h2, 
+.includes-wrapper h3, 
+.includes-wrapper h4,
+.includes-wrapper h5,
+.includes-wrapper h6 {
+  color: #f4d17c !important;
+}
+
+.includes-wrapper a {
+  color: #ffc107 !important;
+}
+
+.includes-wrapper code {
+  background-color: #2a2a2a !important;
+  color: #ffc107 !important;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.includes-wrapper pre {
+  background-color: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px;
+  padding: 1rem;
+}
+</style>
