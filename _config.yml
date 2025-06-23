@@ -1,5 +1,5 @@
 title: "Shreyansh's ML/DL Blog"
-description: "Paper reviews, explanations, and experiments in ML/DL"
+description: "Paper reviews, explanations, and experiments in ML/DL - focusing on computer vision, facial recognition, and GPU-accelerated computing"
 url: "https://shrrynsh.github.io"
 baseurl: "/site.github.io"
 theme: null # critical: disables Jekyll theme gem lookup
@@ -8,19 +8,110 @@ permalink: pretty
 timezone: Asia/Kolkata
 future: true
 
+# Author information
+author:
+  name: "Shreyansh"
+  bio: "ML/DL researcher working with facial recognition models, GPU computing, and computer vision datasets"[1][3]
+  location: "India"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/shrrynsh"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/yourusername"
 
+# Site settings
+lang: en-US
+locale: en-US
+repository: "shrrynsh/site.github.io"
 
-# Optional:
+# Build settings
+highlighter: rouge
+incremental: false
+safe: true
+
+# Pagination
 paginate: 5
 paginate_path: "/page:num"
+
+# SEO and social
+twitter:
+  username: yourusername
+social:
+  name: Shreyansh
+  links:
+    - https://github.com/shrrynsh
+    - https://twitter.com/yourusername
 
 # Plugins supported by GitHub Pages
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
 
-# Collections (optional)
+# Collections
 collections:
   posts:
     output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Shreyansh"
+      show_date: true
+      comments: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+
+# Include files
+include:
+  - _pages
+
+# Sass/SCSS settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Feed settings
+feed:
+  posts_limit: 20
+  excerpt_only: true
+
+# Analytics (optional - add your tracking ID)
+# google_analytics: "UA-XXXXXXXXX-X"
+
+# Comments (optional - if you want to add Disqus)
+# disqus:
+#   shortname: "your-disqus-shortname"
+
+# Research focus areas for metadata
+research_areas:
+  - "Computer Vision"
+  - "Facial Recognition"[3]
+  - "GPU Computing"[1]
+  - "Deep Learning"
+  - "Image Processing"[2]
+  - "Machine Learning"
