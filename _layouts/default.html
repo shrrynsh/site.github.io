@@ -95,85 +95,114 @@
 
     
     /* Navigation Styles */
-    .main-nav {
-      background: var(--nav-bg, #2a2a2a);
-      border-bottom: 1px solid var(--border, #333);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: all 0.3s ease;
-    }
+/* Consistent Navigation for All Pages */
+.main-nav {
+  background: #2a2a2a !important;
+  border-bottom: 1px solid #333 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  width: 100% !important;
+}
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-      height: 60px;
-    }
+.nav-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 2rem !important;
+  height: 60px !important;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+.nav-links {
+  display: flex !important;
+  gap: 2rem !important;
+  align-items: center !important;
+  flex: 1 !important;
+}
 
-    .nav-link {
-      color: var(--text-secondary, #e4e4e4);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      position: relative;
-      font-family: 'Fira Code', 'Courier New', monospace !important;
-    }
+.nav-link {
+  color: #ffc107 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
+}
 
-    .nav-link:hover {
-      color: var(--accent, #ffc107);
-      background: rgba(255, 193, 7, 0.1);
-    }
+.nav-link:hover {
+  color: #f4d17c !important;
+  background: rgba(255, 193, 7, 0.1) !important;
+}
 
-    .nav-link.active {
-      color: var(--accent, #ffc107);
-    }
+.nav-link.active {
+  color: #f4d17c !important;
+}
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--accent, #ffc107);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
+.nav-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -8px !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: #ffc107 !important;
+  transition: all 0.3s ease !important;
+  transform: translateX(-50%) !important;
+}
 
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 80%;
-    }
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 80% !important;
+}
 
-    .nav-extras {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+/* Move Theme Toggle to Extreme Right */
+.nav-extras {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto !important;
+  padding-left: 2rem !important;
+}
 
-    .nav-divider {
-      width: 1px;
-      height: 30px;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--accent, #ffc107),
-        transparent
-      );
-      opacity: 0.6;
-    }
+/* Minimalistic Theme Toggle */
+.theme-toggle {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 193, 7, 0.1) !important;
+  border-radius: 6px !important;
+}
+
+.bulb-icon {
+  font-size: 1.4rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-toggle:hover .bulb-icon {
+  transform: scale(1.1) !important;
+}
+
+/* Remove the nav divider and underline */
+.nav-divider,
+.nav-underline {
+  display: none !important;
+}
+
 
     /* Minimalistic Theme Toggle */
 .theme-toggle {
