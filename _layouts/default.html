@@ -617,6 +617,180 @@
   margin: 2rem auto 0 !important;
   display: block !important;
 }
+/* ===== IMPROVED RIGHT SIDEBAR STRUCTURE ===== */
+.rightpane {
+  background-color: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  max-width: 280px !important;
+  position: sticky !important;
+  top: 80px !important;
+  height: fit-content !important;
+}
+
+/* Sidebar sections styling */
+.sidebar-section {
+  margin-bottom: 2.5rem !important;
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.sidebar-section:last-child {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+}
+
+.sidebar-section h3 {
+  color: #f4d17c !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* Author info styling */
+.author-card {
+  background: linear-gradient(135deg, #333, #2a2a2a) !important;
+  border: 1px solid #ffc107 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+}
+
+.author-card img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 8px !important;
+  border: 2px solid #ffc107 !important;
+  margin-bottom: 1rem !important;
+}
+
+.author-card h4 {
+  color: #f4d17c !important;
+  font-family: 'Fira Code', monospace !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.author-card p {
+  color: #ffc107 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Search box styling */
+.search-box {
+  background: #333 !important;
+  border: 1px solid #555 !important;
+  border-radius: 8px !important;
+  padding: 0.8rem !important;
+  width: 100% !important;
+  color: #e4e4e4 !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 0.9rem !important;
+}
+
+.search-box:focus {
+  outline: none !important;
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
+}
+
+/* Recent posts styling */
+.recent-posts-list {
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+.recent-posts-list li {
+  background: #333 !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.recent-posts-list li:hover {
+  background: #3a3a3a !important;
+  border-color: #ffc107 !important;
+  transform: translateY(-2px) !important;
+}
+
+.recent-posts-list a {
+  color: #e4e4e4 !important;
+  text-decoration: none !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.recent-posts-list a:hover {
+  color: #ffc107 !important;
+}
+
+.post-meta-small {
+  color: #888 !important;
+  font-size: 0.8rem !important;
+  font-family: 'Fira Code', monospace !important;
+}
+
+/* Categories/Tags styling */
+.category-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+}
+
+.category-tag {
+  background: #ffc107 !important;
+  color: #1a1a1a !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 16px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  font-family: 'Fira Code', monospace !important;
+  transition: all 0.3s ease !important;
+}
+
+.category-tag:hover {
+  background: #f4d17c !important;
+  transform: scale(1.05) !important;
+}
+
+/* Social links styling */
+.social-links-sidebar {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.social-link-sidebar {
+  width: 40px !important;
+  height: 40px !important;
+  background: #333 !important;
+  border: 1px solid #555 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #e4e4e4 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-link-sidebar:hover {
+  background: #ffc107 !important;
+  color: #1a1a1a !important;
+  transform: translateY(-2px) !important;
+}
 
 </style>
 
