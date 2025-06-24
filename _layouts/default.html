@@ -4,22 +4,23 @@
 <body>
   <!-- Enhanced Navigation Bar -->
   <nav class="main-nav">
-    <div class="nav-container">
-      <div class="nav-links">
-        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
-        <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url contains 'about' %}active{% endif %}">About</a>
-        <a href="{{ '/projects' | relative_url }}" class="nav-link {% if page.url contains 'projects' %}active{% endif %}">Projects</a>
-        <a href="{{ '/blog' | relative_url }}" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">Blog</a>
-        <a href="{{ '/datasets' | relative_url }}" class="nav-link {% if page.url contains 'datasets' %}active{% endif %}">Datasets</a>
-      </div>
-      
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+      <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url contains 'about' %}active{% endif %}">About</a>
+      <a href="{{ '/projects' | relative_url }}" class="nav-link {% if page.url contains 'projects' %}active{% endif %}">Projects</a>
+      <a href="{{ '/blog' | relative_url }}" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+      <a href="{{ '/datasets' | relative_url }}" class="nav-link {% if page.url contains 'datasets' %}active{% endif %}">Datasets</a>
+    </div>
+    
     <div class="nav-extras">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
         <span class="bulb-icon">💡</span>
       </button>
     </div>
-    <div class="nav-underline"></div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Main Content Area -->
   <main class="main-content">
