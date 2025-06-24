@@ -13,12 +13,10 @@
         <a href="{{ '/datasets' | relative_url }}" class="nav-link {% if page.url contains 'datasets' %}active{% endif %}">Datasets</a>
       </div>
       
-      <div class="nav-extras">
-        <div class="nav-divider"></div>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <span class="bulb-icon">💡</span>
-        </button>
-      </div>
+    <div class="nav-extras">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="bulb-icon">💡</span>
+      </button>
     </div>
     <div class="nav-underline"></div>
   </nav>
@@ -75,6 +73,27 @@
   
   <!-- Navigation and Footer Styles -->
   <style>
+    :root {
+    --nav-bg: #2a2a2a;
+    --text-secondary: #e4e4e4;
+    --text-primary: #f4d17c;
+    --border: #333;
+    --accent: #ffc107;
+    --card-bg: #2a2a2a;
+    --bg-dark: #1a1a1a;
+  }
+
+  [data-theme="light"] {
+    --nav-bg: #ffffff;
+    --text-secondary: #333333;
+    --text-primary: #2c3e50;
+    --border: #e0e0e0;
+    --accent: #ff6b35;
+    --card-bg: #f8f9fa;
+    --bg-dark: #ffffff;
+  }
+
+    
     /* Navigation Styles */
     .main-nav {
       background: var(--nav-bg, #2a2a2a);
@@ -156,28 +175,43 @@
       opacity: 0.6;
     }
 
-    .theme-toggle {
-      background: none;
-      border: 2px solid var(--border, #333);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+    /* Minimalistic Theme Toggle */
+.theme-toggle {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+}
 
-    .theme-toggle:hover {
-      border-color: var(--accent, #ffc107);
-      transform: scale(1.1);
-    }
+.theme-toggle:hover {
+  background: rgba(255, 193, 7, 0.1) !important;
+  border-radius: 6px !important;
+  transform: none !important;
+}
 
-    .bulb-icon {
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
+.bulb-icon {
+  font-size: 1.4rem !important;
+  transition: all 0.3s ease !important;
+  filter: grayscale(0.3) !important;
+}
+
+.theme-toggle:hover .bulb-icon {
+  filter: grayscale(0) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Remove the nav divider line as well for cleaner look */
+.nav-divider {
+  display: none !important;
+}
 
     .nav-underline {
       height: 2px;
