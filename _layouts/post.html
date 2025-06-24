@@ -2,385 +2,143 @@
 layout: default
 ---
 
-<div id="main-container" class="horizontal-layout">
-  
-  <!-- Main Post Content -->
-  <article class="post-content-main">
-    {% include postcontent.html %}
-  </article>
-
-  <!-- Horizontal Content Sections Below Post -->
-  <div class="horizontal-sections">
+<div id="main-container" class="dark-theme-post">
+  <style>
+    /* Inline critical dark theme styles */
+    .dark-theme-post {
+      background-color: #1a1a1a !important;
+      color: #e4e4e4 !important;
+      min-height: 100vh;
+    }
     
-    <!-- Author & Site Info Section -->
-    <section class="horizontal-section author-section">
-      <div class="section-header">
-        <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="author-avatar-horizontal">
-        <div class="author-info-horizontal">
-          <h3>{{ site.title }}</h3>
-          <p>ML/DL Researcher • Computer Vision • GPU Computing</p>
-        </div>
-      </div>
-    </section>
+    .dark-theme-post * {
+      color: inherit !important;
+    }
+    
+    .dark-theme-post h1, 
+    .dark-theme-post h2, 
+    .dark-theme-post h3, 
+    .dark-theme-post h4 {
+      color: #f4d17c !important;
+    }
+    
+    .dark-theme-post a {
+      color: #ffc107 !important;
+    }
+    
+    .dark-theme-post .sidebar,
+    .dark-theme-post .left-sidebar,
+    .dark-theme-post .right-sidebar {
+      background-color: #2a2a2a !important;
+      border: 1px solid #333 !important;
+    }
+  </style>
 
-    <!-- Search & Navigation Section -->
-    <section class="horizontal-section search-section">
-      <h3>Search & Navigate</h3>
-      <div class="search-nav-grid">
-        <div class="search-container">
-          {% include searchbar.html %}
-        </div>
-        <div class="quick-nav">
-          <a href="{{ '/' | relative_url }}" class="nav-button">Home</a>
-          <a href="{{ '/blog' | relative_url }}" class="nav-button">All Posts</a>
-          <a href="{{ '/categories' | relative_url }}" class="nav-button">Categories</a>
-        </div>
+  <!-- Enhanced Post Header -->
+  <header class="post-header-enhanced">
+    <div class="author-section">
+      <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="post-avatar">
+      <div class="author-info-enhanced">
+        <h3>Shreyansh</h3>
+        <p>ML/DL researcher • Facial Recognition[8] • GPU Computing[9]</p>
+        <time>{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
       </div>
-    </section>
+    </div>
+    <h1 class="post-title-enhanced">{{ page.title }}</h1>
+  </header>
 
-    <!-- Recent Posts Section -->
-    <section class="horizontal-section recent-posts-section">
-      <h3>Recent Posts</h3>
-      <div class="posts-horizontal-grid">
-        {% for post in site.posts limit:4 %}
-          <div class="post-card-horizontal">
-            <a href="{{ post.url | relative_url }}" class="post-link-horizontal">
-              <h4>{{ post.title | truncate: 50 }}</h4>
-              <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-              <span class="post-date-horizontal">{{ post.date | date: "%b %d, %Y" }}</span>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-    </section>
-
-    <!-- Categories & Research Areas Section -->
-    <section class="horizontal-section categories-section">
-      <div class="categories-research-grid">
-        <div class="categories-column">
-          <h3>Categories</h3>
-          <div class="categories-horizontal">
-            {% assign all_categories = site.categories | sort %}
-            {% for category in all_categories %}
-              <a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/" class="category-tag-horizontal">
-                {{ category[0] }} ({{ category[1].size }})
-              </a>
-            {% endfor %}
-          </div>
-        </div>
-        
-        <div class="research-column">
-          <h3>Research Focus</h3>
-          <div class="research-tags-horizontal">
-            <span class="research-tag-horizontal">Facial Recognition</span>
-            <span class="research-tag-horizontal">Computer Vision</span>
-            <span class="research-tag-horizontal">GPU Computing</span>
-            <span class="research-tag-horizontal">Deep Learning</span>
-            <span class="research-tag-horizontal">Image Processing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats & Social Section -->
-    <section class="horizontal-section stats-social-section">
-      <div class="stats-social-grid">
-        <div class="stats-column">
-          <h3>Blog Stats</h3>
-          <div class="stats-horizontal">
-            <div class="stat-item-horizontal">
-              <span class="stat-number">{{ site.posts.size }}</span>
-              <span class="stat-label">Posts</span>
-            </div>
-            <div class="stat-item-horizontal">
-              <span class="stat-number">{{ site.categories.size }}</span>
-              <span class="stat-label">Categories</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="social-column">
-          <h3>Connect</h3>
-          <div class="social-links-horizontal">
-            <a href="https://github.com/shrrynsh" class="social-link-horizontal">
-              <span class="social-icon">📂</span>
-              <span>GitHub</span>
-            </a>
-            <a href="https://kaggle.com/yourusername" class="social-link-horizontal">
-              <span class="social-icon">🏆</span>
-              <span>Kaggle</span>
-            </a>
-            <a href="https://twitter.com/yourusername" class="social-link-horizontal">
-              <span class="social-icon">🐦</span>
-              <span>Twitter</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+  <!-- Your existing includes with dark theme wrapper -->
+  <div class="includes-wrapper">
+    {% include leftpane.html %}
+    {% include postcontent.html %}
+    {% include rightpane.html %}
   </div>
 </div>
 
 <style>
-/* Horizontal Layout Styling */
-.horizontal-layout {
-  max-width: 1200px !important;
-  margin: 2rem auto !important;
-  padding: 0 2rem !important;
-  display: block !important;
+.post-header-enhanced {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-.post-content-main {
-  background: #1a1a1a !important;
-  margin-bottom: 3rem !important;
+.author-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.horizontal-sections {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 2rem !important;
+.post-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #ffc107;
+  object-fit: cover;
 }
 
-.horizontal-section {
-  background: #2a2a2a !important;
-  border: 1px solid #333 !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  font-family: 'Fira Code', 'Courier New', monospace !important;
-}
-
-.horizontal-section h3 {
+.author-info-enhanced h3 {
   color: #f4d17c !important;
-  font-size: 1.2rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 1.5rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px !important;
+  margin: 0;
+  font-size: 1.2rem;
 }
 
-/* Author Section */
-.section-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.5rem !important;
-}
-
-.author-avatar-horizontal {
-  width: 80px !important;
-  height: 80px !important;
-  border-radius: 8px !important;
-  border: 2px solid #ffc107 !important;
-  object-fit: cover !important;
-}
-
-.author-info-horizontal h3 {
-  color: #f4d17c !important;
-  margin: 0 0 0.5rem 0 !important;
-  font-size: 1.3rem !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-}
-
-.author-info-horizontal p {
+.author-info-enhanced p {
   color: #ffc107 !important;
-  margin: 0 !important;
-  font-size: 0.9rem !important;
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
 }
 
-/* Search & Navigation */
-.search-nav-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 2rem !important;
-  align-items: center !important;
-}
-
-.quick-nav {
-  display: flex !important;
-  gap: 1rem !important;
-  justify-content: flex-end !important;
-}
-
-.nav-button {
-  background: #333 !important;
-  color: #e4e4e4 !important;
-  padding: 0.8rem 1.5rem !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: all 0.3s ease !important;
-}
-
-.nav-button:hover {
-  background: #ffc107 !important;
-  color: #1a1a1a !important;
-}
-
-/* Recent Posts Grid */
-.posts-horizontal-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 1.5rem !important;
-}
-
-.post-card-horizontal {
-  background: #333 !important;
-  border: 1px solid #444 !important;
-  border-radius: 8px !important;
-  padding: 1.5rem !important;
-  transition: all 0.3s ease !important;
-}
-
-.post-card-horizontal:hover {
-  background: #3a3a3a !important;
-  border-color: #ffc107 !important;
-  transform: translateY(-2px) !important;
-}
-
-.post-link-horizontal {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-
-.post-card-horizontal h4 {
-  color: #f4d17c !important;
-  font-size: 1rem !important;
-  margin-bottom: 0.8rem !important;
-}
-
-.post-card-horizontal p {
-  color: #e4e4e4 !important;
-  font-size: 0.85rem !important;
-  line-height: 1.4 !important;
-  margin-bottom: 0.8rem !important;
-}
-
-.post-date-horizontal {
+.author-info-enhanced time {
   color: #888 !important;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
+  font-family: 'Fira Code', monospace;
 }
 
-/* Categories & Research Grid */
-.categories-research-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 3rem !important;
+.post-title-enhanced {
+  color: #f4d17c !important;
+  font-size: 2.5rem !important;
+  margin: 0 !important;
+  line-height: 1.2;
 }
 
-.categories-horizontal, .research-tags-horizontal {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.8rem !important;
+.includes-wrapper {
+  background: #1a1a1a !important;
 }
 
-.category-tag-horizontal, .research-tag-horizontal {
-  background: #333 !important;
+/* Force override all nested elements */
+.includes-wrapper * {
+  background-color: inherit !important;
   color: #e4e4e4 !important;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 20px !important;
-  text-decoration: none !important;
-  font-size: 0.85rem !important;
-  font-weight: 500 !important;
-  border: 1px solid #444 !important;
-  transition: all 0.3s ease !important;
 }
 
-.category-tag-horizontal:hover, .research-tag-horizontal:hover {
-  background: #ffc107 !important;
-  color: #1a1a1a !important;
-  transform: scale(1.05) !important;
+.includes-wrapper h1, 
+.includes-wrapper h2, 
+.includes-wrapper h3, 
+.includes-wrapper h4,
+.includes-wrapper h5,
+.includes-wrapper h6 {
+  color: #f4d17c !important;
 }
 
-.research-tag-horizontal {
-  background: rgba(255, 193, 7, 0.2) !important;
+.includes-wrapper a {
   color: #ffc107 !important;
-  border-color: #ffc107 !important;
 }
 
-/* Stats & Social Grid */
-.stats-social-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 3rem !important;
-}
-
-.stats-horizontal {
-  display: flex !important;
-  gap: 2rem !important;
-}
-
-.stat-item-horizontal {
-  background: #333 !important;
-  border: 1px solid #444 !important;
-  border-radius: 8px !important;
-  padding: 1.5rem !important;
-  text-align: center !important;
-  flex: 1 !important;
-}
-
-.stat-number {
-  display: block !important;
+.includes-wrapper code {
+  background-color: #2a2a2a !important;
   color: #ffc107 !important;
-  font-size: 2rem !important;
-  font-weight: 700 !important;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
 }
 
-.stat-label {
-  color: #e4e4e4 !important;
-  font-size: 0.9rem !important;
-}
-
-.social-links-horizontal {
-  display: flex !important;
-  gap: 1rem !important;
-}
-
-.social-link-horizontal {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-  background: #333 !important;
-  color: #e4e4e4 !important;
-  padding: 1rem 1.5rem !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: all 0.3s ease !important;
-  flex: 1 !important;
-  justify-content: center !important;
-}
-
-.social-link-horizontal:hover {
-  background: #ffc107 !important;
-  color: #1a1a1a !important;
-  transform: translateY(-2px) !important;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .horizontal-layout {
-    padding: 0 1rem !important;
-  }
-  
-  .search-nav-grid,
-  .categories-research-grid,
-  .stats-social-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  .posts-horizontal-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .stats-horizontal,
-  .social-links-horizontal {
-    flex-direction: column !important;
-  }
-  
-  .quick-nav {
-    justify-content: center !important;
-  }
+.includes-wrapper pre {
+  background-color: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px;
+  padding: 1rem;
 }
 </style>
