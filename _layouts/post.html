@@ -2,143 +2,288 @@
 layout: default
 ---
 
-<div id="main-container" class="dark-theme-post">
-  <style>
-    /* Inline critical dark theme styles */
-    .dark-theme-post {
-      background-color: #1a1a1a !important;
-      color: #e4e4e4 !important;
-      min-height: 100vh;
-    }
-    
-    .dark-theme-post * {
-      color: inherit !important;
-    }
-    
-    .dark-theme-post h1, 
-    .dark-theme-post h2, 
-    .dark-theme-post h3, 
-    .dark-theme-post h4 {
-      color: #f4d17c !important;
-    }
-    
-    .dark-theme-post a {
-      color: #ffc107 !important;
-    }
-    
-    .dark-theme-post .sidebar,
-    .dark-theme-post .left-sidebar,
-    .dark-theme-post .right-sidebar {
-      background-color: #2a2a2a !important;
-      border: 1px solid #333 !important;
-    }
-  </style>
-
+<div id="main-container" class="clean-post-layout">
   <!-- Enhanced Post Header -->
   <header class="post-header-enhanced">
     <div class="author-section">
       <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="post-avatar">
       <div class="author-info-enhanced">
         <h3>Shreyansh</h3>
-        <p>ML/DL researcher • Facial Recognition[8] • GPU Computing[9]</p>
+        <p>ML/DL researcher • Facial Recognition • GPU Computing</p>
         <time>{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
       </div>
     </div>
     <h1 class="post-title-enhanced">{{ page.title }}</h1>
   </header>
 
-  <!-- Your existing includes with dark theme wrapper -->
-  <div class="includes-wrapper">
-    {% include leftpane.html %}
+  <!-- Main Post Content Only -->
+  <main class="post-content-wrapper">
     {% include postcontent.html %}
-    {% include rightpane.html %}
-  </div>
+  </main>
+
+  <!-- Optional: Post Navigation -->
+  <nav class="post-navigation">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="nav-link prev-post">
+        <span class="nav-direction">← Previous</span>
+        <span class="nav-title">{{ page.previous.title | truncate: 40 }}</span>
+      </a>
+    {% endif %}
+    
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="nav-link next-post">
+        <span class="nav-direction">Next →</span>
+        <span class="nav-title">{{ page.next.title | truncate: 40 }}</span>
+      </a>
+    {% endif %}
+  </nav>
 </div>
 
 <style>
+/* Clean Post Layout */
+.clean-post-layout {
+  background-color: #1a1a1a !important;
+  color: #e4e4e4 !important;
+  min-height: 100vh !important;
+  max-width: 900px !important;
+  margin: 2rem auto !important;
+  padding: 0 2rem !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
+}
+
+/* Hide any sidebars completely */
+.leftpane, .rightpane, #right-container {
+  display: none !important;
+}
+
+/* Post Header Styling */
 .post-header-enhanced {
-  background: #2a2a2a;
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
+  background: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .author-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .post-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 3px solid #ffc107;
-  object-fit: cover;
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 8px !important;
+  border: 2px solid #ffc107 !important;
+  object-fit: cover !important;
 }
 
 .author-info-enhanced h3 {
   color: #f4d17c !important;
-  margin: 0;
-  font-size: 1.2rem;
+  margin: 0 !important;
+  font-size: 1.3rem !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
+  font-weight: 700 !important;
 }
 
 .author-info-enhanced p {
   color: #ffc107 !important;
-  margin: 0.3rem 0;
-  font-size: 0.9rem;
+  margin: 0.5rem 0 !important;
+  font-size: 0.9rem !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
 }
 
 .author-info-enhanced time {
   color: #888 !important;
-  font-size: 0.8rem;
-  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
+  background: rgba(255, 193, 7, 0.1) !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 12px !important;
 }
 
 .post-title-enhanced {
   color: #f4d17c !important;
-  font-size: 2.5rem !important;
+  font-size: 2.8rem !important;
   margin: 0 !important;
-  line-height: 1.2;
+  line-height: 1.2 !important;
+  font-family: 'Fira Code', 'Courier New', monospace !important;
+  font-weight: 800 !important;
 }
 
-.includes-wrapper {
+/* Main Content Wrapper */
+.post-content-wrapper {
   background: #1a1a1a !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-/* Force override all nested elements */
-.includes-wrapper * {
-  background-color: inherit !important;
+/* Override all content styling */
+.post-content-wrapper * {
+  font-family: 'Fira Code', 'Courier New', monospace !important;
   color: #e4e4e4 !important;
 }
 
-.includes-wrapper h1, 
-.includes-wrapper h2, 
-.includes-wrapper h3, 
-.includes-wrapper h4,
-.includes-wrapper h5,
-.includes-wrapper h6 {
+.post-content-wrapper h1, 
+.post-content-wrapper h2, 
+.post-content-wrapper h3, 
+.post-content-wrapper h4,
+.post-content-wrapper h5,
+.post-content-wrapper h6 {
   color: #f4d17c !important;
+  font-weight: 700 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
 }
 
-.includes-wrapper a {
+.post-content-wrapper h2 {
+  font-size: 2rem !important;
+  border-bottom: 2px solid #ffc107 !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.post-content-wrapper h3 {
+  font-size: 1.5rem !important;
   color: #ffc107 !important;
 }
 
-.includes-wrapper code {
+.post-content-wrapper p {
+  line-height: 1.8 !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.05rem !important;
+}
+
+.post-content-wrapper a {
+  color: #ffc107 !important;
+  text-decoration: none !important;
+}
+
+.post-content-wrapper a:hover {
+  color: #f4d17c !important;
+  text-decoration: underline !important;
+}
+
+.post-content-wrapper code {
   background-color: #2a2a2a !important;
   color: #ffc107 !important;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.6rem !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
+  border: 1px solid #333 !important;
 }
 
-.includes-wrapper pre {
+.post-content-wrapper pre {
   background-color: #2a2a2a !important;
   border: 1px solid #333 !important;
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  overflow-x: auto !important;
+  margin: 1.5rem 0 !important;
+}
+
+.post-content-wrapper pre code {
+  background: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.post-content-wrapper blockquote {
+  background: rgba(255, 193, 7, 0.1) !important;
+  border-left: 4px solid #ffc107 !important;
+  padding: 1rem 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-style: italic !important;
+}
+
+.post-content-wrapper ul, 
+.post-content-wrapper ol {
+  padding-left: 2rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.post-content-wrapper li {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Post Navigation */
+.post-navigation {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem !important;
+  margin-top: 4rem !important;
+  padding-top: 2rem !important;
+  border-top: 2px solid #333 !important;
+}
+
+.nav-link {
+  background: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  text-decoration: none !important;
+  color: #e4e4e4 !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.nav-link:hover {
+  background: #ffc107 !important;
+  color: #1a1a1a !important;
+  transform: translateY(-2px) !important;
+}
+
+.nav-direction {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  color: #888 !important;
+}
+
+.nav-link:hover .nav-direction {
+  color: #1a1a1a !important;
+}
+
+.nav-title {
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+}
+
+.prev-post {
+  text-align: left !important;
+}
+
+.next-post {
+  text-align: right !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clean-post-layout {
+    padding: 0 1rem !important;
+    margin: 1rem auto !important;
+  }
+  
+  .post-header-enhanced {
+    padding: 1.5rem !important;
+  }
+  
+  .author-section {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+  
+  .post-title-enhanced {
+    font-size: 2.2rem !important;
+  }
+  
+  .post-navigation {
+    grid-template-columns: 1fr !important;
+  }
 }
 </style>
