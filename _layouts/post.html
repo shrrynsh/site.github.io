@@ -3,40 +3,15 @@ layout: default
 ---
 
 <div id="main-container" class="clean-post-layout">
-  <!-- Enhanced Post Header -->
-  <header class="post-header-enhanced">
-    <div class="author-section">
-      <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="post-avatar">
-      <div class="author-info-enhanced">
-        <h3>Shreyansh</h3>
-        <p>ML/DL researcher • Facial Recognition • GPU Computing</p>
-        <time>{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
-      </div>
-    </div>
-    <h1 class="post-title-enhanced">{{ page.title }}</h1>
-  </header>
-
   <!-- Main Post Content Only -->
   <main class="post-content-wrapper">
     {% include postcontent.html %}
-  </main>
-
-  <!-- Optional: Post Navigation -->
-  <nav class="post-navigation">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="nav-link prev-post">
-        <span class="nav-direction">← Previous</span>
-        <span class="nav-title">{{ page.previous.title | truncate: 40 }}</span>
-      </a>
-    {% endif %}
     
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="nav-link next-post">
-        <span class="nav-direction">Next →</span>
-        <span class="nav-title">{{ page.next.title | truncate: 40 }}</span>
-      </a>
-    {% endif %}
-  </nav>
+    <!-- Avatar positioned after the first heading (ML title) -->
+    <div class="post-avatar-section">
+      <img src="{{ '/assets/img/avatar.webp' | relative_url }}" alt="Shreyansh" class="post-avatar-inline">
+    </div>
+  </main>
 </div>
 
 <style>
@@ -51,66 +26,29 @@ layout: default
   font-family: 'Fira Code', 'Courier New', monospace !important;
 }
 
-/* Hide any sidebars completely */
-.leftpane, .rightpane, #right-container {
+/* Hide any sidebars and boxes completely */
+.leftpane, .rightpane, #right-container,
+.author-section, .post-header-enhanced,
+.comment-section, .comments-box, #comments,
+.post-navigation {
   display: none !important;
 }
 
-/* Post Header Styling */
-.post-header-enhanced {
-  background: #2a2a2a !important;
-  border: 1px solid #333 !important;
-  border-radius: 12px !important;
-  padding: 2rem !important;
-  margin-bottom: 3rem !important;
+/* Avatar positioning below ML title */
+.post-avatar-section {
+  text-align: center !important;
+  margin: 2rem 0 !important;
+  padding: 1rem 0 !important;
 }
 
-.author-section {
-  display: flex !important;
-  align-items: center !important;
-  gap: 1.5rem !important;
-  margin-bottom: 2rem !important;
-}
-
-.post-avatar {
-  width: 70px !important;
-  height: 70px !important;
+.post-avatar-inline {
+  width: 100px !important;
+  height: 100px !important;
   border-radius: 8px !important;
   border: 2px solid #ffc107 !important;
   object-fit: cover !important;
-}
-
-.author-info-enhanced h3 {
-  color: #f4d17c !important;
-  margin: 0 !important;
-  font-size: 1.3rem !important;
-  font-family: 'Fira Code', 'Courier New', monospace !important;
-  font-weight: 700 !important;
-}
-
-.author-info-enhanced p {
-  color: #ffc107 !important;
-  margin: 0.5rem 0 !important;
-  font-size: 0.9rem !important;
-  font-family: 'Fira Code', 'Courier New', monospace !important;
-}
-
-.author-info-enhanced time {
-  color: #888 !important;
-  font-size: 0.85rem !important;
-  font-family: 'Fira Code', 'Courier New', monospace !important;
-  background: rgba(255, 193, 7, 0.1) !important;
-  padding: 0.3rem 0.8rem !important;
-  border-radius: 12px !important;
-}
-
-.post-title-enhanced {
-  color: #f4d17c !important;
-  font-size: 2.8rem !important;
-  margin: 0 !important;
-  line-height: 1.2 !important;
-  font-family: 'Fira Code', 'Courier New', monospace !important;
-  font-weight: 800 !important;
+  display: block !important;
+  margin: 0 auto !important;
 }
 
 /* Main Content Wrapper */
@@ -136,6 +74,12 @@ layout: default
   font-weight: 700 !important;
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
+}
+
+.post-content-wrapper h1 {
+  font-size: 2.8rem !important;
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .post-content-wrapper h2 {
@@ -209,56 +153,26 @@ layout: default
   line-height: 1.6 !important;
 }
 
-/* Post Navigation */
-.post-navigation {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 1.5rem !important;
-  margin-top: 4rem !important;
-  padding-top: 2rem !important;
-  border-top: 2px solid #333 !important;
-}
-
-.nav-link {
+.post-content-wrapper table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0 !important;
   background: #2a2a2a !important;
   border: 1px solid #333 !important;
-  border-radius: 12px !important;
-  padding: 1.5rem !important;
-  text-decoration: none !important;
-  color: #e4e4e4 !important;
-  transition: all 0.3s ease !important;
-  display: flex !important;
-  flex-direction: column !important;
+  border-radius: 8px !important;
 }
 
-.nav-link:hover {
-  background: #ffc107 !important;
-  color: #1a1a1a !important;
-  transform: translateY(-2px) !important;
-}
-
-.nav-direction {
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.5rem !important;
-  color: #888 !important;
-}
-
-.nav-link:hover .nav-direction {
-  color: #1a1a1a !important;
-}
-
-.nav-title {
-  font-weight: 500 !important;
-  font-size: 1rem !important;
-}
-
-.prev-post {
+.post-content-wrapper th,
+.post-content-wrapper td {
+  padding: 0.8rem !important;
+  border: 1px solid #333 !important;
   text-align: left !important;
 }
 
-.next-post {
-  text-align: right !important;
+.post-content-wrapper th {
+  background: #333 !important;
+  color: #ffc107 !important;
+  font-weight: 600 !important;
 }
 
 /* Responsive Design */
@@ -268,22 +182,13 @@ layout: default
     margin: 1rem auto !important;
   }
   
-  .post-header-enhanced {
-    padding: 1.5rem !important;
+  .post-avatar-inline {
+    width: 80px !important;
+    height: 80px !important;
   }
   
-  .author-section {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 1rem !important;
-  }
-  
-  .post-title-enhanced {
+  .post-content-wrapper h1 {
     font-size: 2.2rem !important;
-  }
-  
-  .post-navigation {
-    grid-template-columns: 1fr !important;
   }
 }
 </style>
