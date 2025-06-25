@@ -105,8 +105,11 @@ a:hover {
 .main-nav {
   background: var(--nav-bg, #2a2a2a);
   border-bottom: 1px solid var(--border, #333);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
   z-index: 100;
   transition: all 0.3s ease;
 }
