@@ -80,15 +80,7 @@ tbody tr:nth-child(even) {
 
 /* TOP PANEL STYLES */
 
-.toppanel {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 15px;
-	background-color: var(--black);
-	height: 3rem;
-	position: relative;
-}
+
 
 .tp-banner {
 	height: 1.3rem;
@@ -133,65 +125,6 @@ tbody tr:nth-child(even) {
 	transition: all 0.3s ease;
 }
 
-/* Desktop styles */
-
-.tp-nav {
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.tp-nav a {
-	text-decoration: none;
-	color: var(--fg)
-}
-
-.tp-nav a:hover {
-	color: var(--accent)
-}
-
-.tp-nav li {
-	display: inline-block;
-	text-align: left;
-	margin: 0 1vw 0 1vw;
-}
-
-.tp-dropdown {
-	position: relative;
-}
-
-.tp-dropdown-elements {
-	display: none;
-	position: absolute;
-	background-color: var(--black);
-	min-height:1.3rem;
-	z-index: 1;
-	list-style: none;
-	padding: 0;
-}
-
-.tp-dropdown-elements li {
-	margin: 0 0px;
-	min-height: 2rem;
-}
-
-.tp-dropdown-elements li a{
-	margin: 0 10px;
-
-}
-
-
-.tp-dropdown:hover .tp-dropdown-elements {
-	display: block;
-}
-
-/*-*/
-
-
-/* SEARCHBOX */
-
-
 input[type="text"] {
 	flex: 1 1 auto;
 	font-size: 1.1rem;
@@ -218,13 +151,7 @@ input[type="text"] {
 
 /* MAIN CONTAINER */
 
-#main-container {
-	display: flex;
-	padding-top: 2rem;
-	width: 100%;
 
-	justify-content: center;
-}
 
 
 /*-*/
@@ -733,10 +660,7 @@ button {
 		flex-direction: column;
 	}
 
-	.burger-menu {
-		display: flex;
-	}
-
+	
 	/* Hide menu by default on mobile */
 	.tp-right {
 		display: none;
@@ -879,14 +803,3 @@ button {
 
 }
 
-.main-nav {
-	background: var(--nav-bg, #2a2a2a);
-	border-bottom: 1px solid var(--border, #333);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100vw;
-	z-index: 100;
-	transition: all 0.3s ease;
-}
