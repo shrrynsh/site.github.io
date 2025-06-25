@@ -803,7 +803,7 @@ button {
 
 }
 
-/* Modern Navbar Styles (Global) */
+/* Modern Global Navbar Styles */
 .main-nav {
 	background: var(--nav-bg, #2a2a2a);
 	border-bottom: 1px solid var(--border, #333);
@@ -813,7 +813,6 @@ button {
 	right: 0;
 	width: 100vw;
 	z-index: 100;
-	transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -829,7 +828,9 @@ button {
 .nav-links {
 	display: flex;
 	gap: 2rem;
-	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .nav-link {
@@ -840,50 +841,13 @@ button {
 	border-radius: 6px;
 	transition: all 0.3s ease;
 	position: relative;
+	display: block;
 }
 
-.nav-link:hover {
-	color: var(--accent, #ffc107);
-	background: rgba(255, 193, 7, 0.1);
-}
-
+.nav-link:hover,
 .nav-link.active {
 	color: var(--accent, #ffc107);
-}
-
-.nav-link::after {
-	content: '';
-	position: absolute;
-	bottom: -8px;
-	left: 50%;
-	width: 0;
-	height: 2px;
-	background: var(--accent, #ffc107);
-	transition: all 0.3s ease;
-	transform: translateX(-50%);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-	width: 80%;
-}
-
-.nav-extras {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-
-.nav-divider {
-	width: 1px;
-	height: 30px;
-	background: linear-gradient(
-		to bottom,
-		transparent,
-		var(--accent, #ffc107),
-		transparent
-	);
-	opacity: 0.6;
+	background: rgba(255, 193, 7, 0.1);
 }
 
 .theme-toggle {
@@ -897,17 +861,11 @@ button {
 	justify-content: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	position: relative;
-	overflow: hidden;
 }
 
 .theme-toggle:hover {
 	border-color: var(--accent, #ffc107);
 	transform: scale(1.1);
-}
-
-.theme-toggle:active {
-	transform: scale(0.95);
 }
 
 .bulb-icon {
@@ -919,16 +877,5 @@ button {
 .theme-toggle:hover .bulb-icon {
 	filter: grayscale(0);
 	transform: rotate(15deg);
-}
-
-.nav-underline {
-	height: 2px;
-	background: linear-gradient(
-		90deg,
-		transparent,
-		var(--accent, #ffc107),
-		transparent
-	);
-	opacity: 0.3;
 }
 
