@@ -2,6 +2,7 @@
 layout: post
 title: "Support Vector Machines – An Intuitive Introduction"
 date: 2025-06-23
+categories: ml
 ---
 
 ---
