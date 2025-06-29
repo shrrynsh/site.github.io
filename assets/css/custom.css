@@ -41,15 +41,15 @@ html body #main-container .post-content-wrapper h1 {
 html body #main-container.clean-post-layout,
 .clean-post-layout,
 .post-content-wrapper {
+    font-family: 'JetBrains Mono', 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
+    font-size: 1.1rem !important;
+    background: #232323 !important;
+    color: #f4d17c !important;
     max-width: 90vw !important;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
-    font-family: 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
-    font-size: 1.1rem !important;
-    background: #232323 !important;
-    color: #f4d17c !important;
     width: 100% !important;
     box-sizing: border-box !important;
     border-radius: 8px !important;
@@ -100,3 +100,5 @@ body {
       padding-right: 0.5rem !important;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
