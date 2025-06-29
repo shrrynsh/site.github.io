@@ -36,3 +36,28 @@ html body #main-container.clean-post-layout {
 html body #main-container .post-content-wrapper h1 {
     text-align: left !important;
 }
+
+/* Blog content full width, flush left */
+html body #main-container.clean-post-layout,
+.clean-post-layout,
+.post-content-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    box-sizing: border-box !important;
+}
+
+/* Center main headings */
+.post-content-wrapper h1,
+.post-content-wrapper h2 {
+    text-align: center !important;
+}
+
+/* Left-align subheadings */
+.post-content-wrapper h3,
+.post-content-wrapper h4,
+.post-content-wrapper h5,
+.post-content-wrapper h6 {
+    text-align: left !important;
+}
