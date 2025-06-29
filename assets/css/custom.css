@@ -41,11 +41,20 @@ html body #main-container .post-content-wrapper h1 {
 html body #main-container.clean-post-layout,
 .clean-post-layout,
 .post-content-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: 100vw !important;
-    width: 100vw !important;
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+    width: auto !important;
+    max-width: none !important;
     box-sizing: border-box !important;
+}
+
+@media (max-width: 600px) {
+  html body #main-container.clean-post-layout,
+  .clean-post-layout,
+  .post-content-wrapper {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+  }
 }
 
 /* Center main headings */
