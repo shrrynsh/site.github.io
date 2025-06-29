@@ -85,7 +85,7 @@ body {
 
 /* Remove monospace font for math, use KaTeX/MathJax default */
 .katex, .katex * {
-    font-family: inherit !important;
+    font-family: 'JetBrains Mono', 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
     font-size: 1.1rem !important;
     color: #f4d17c !important;
 }
