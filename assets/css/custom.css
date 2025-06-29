@@ -59,6 +59,10 @@ html body #main-container.clean-post-layout,
 .post-content-wrapper h1,
 .post-content-wrapper h2 {
     text-align: center !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 
 /* Left-align subheadings */
