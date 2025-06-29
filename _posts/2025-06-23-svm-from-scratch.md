@@ -12,8 +12,6 @@ categories: ml
 
 SVM is one of the most powerful supervised learning algorithms, primarily used for classification tasks. The main goal of SVM is to classify instances based on their relative position with a decision boundary (a **hyperplane**). SVMs work well for both linearly and non-linearly separable cases. Let's explore more about SVMs in this blog.
 
----
-
 ## The Main Goal: Finding the Optimal Hyperplane
 
 The main goal of SVMs is to find the best decision boundary, referred to as the **optimal hyperplane**. Once we have the hyperplane, we can make classifications based on the hypothesis function defined as:
@@ -27,13 +25,9 @@ $$
 
 Let's understand what a hyperplane is and how to compare hyperplanes.
 
----
-
 ## A Generalized Plane – Hyperplane
 
 A **hyperplane** is a generalization of the 2D plane for higher dimensions. It divides a space into two parts (e.g., a line in 2D, a plane in 3D). The dimension of a hyperplane is always one less than the space it divides. The generalized equation is $w \cdot x + b = 0$.
-
----
 
 ## How to Compare Hyperplanes?
 
@@ -52,8 +46,6 @@ The best hyperplane has the maximum functional margin.
 A scaled version of the functional margin:
 
 $$G = \min_{i=1,\dots,m} \Bigl( y_i \bigl(\frac{w}{\|w\|} \cdot x + \frac{b}{\|w\|}\bigr)\Bigr) = \frac{F}{\|w\|}$$
-
----
 
 ## The Optimization
 
@@ -74,8 +66,6 @@ $$
 \text{subject to}\quad & y_i(w.x_i+b)-1 \ge 0, \quad i = 1,\dots,m.
 \end{aligned}
 $$
-
----
 
 ## The Lagrangian and Dual Problem
 
@@ -105,8 +95,6 @@ $$
 \quad\text{and}\quad
 \sum_{i=1}^{m} \alpha_i \, y_i = 0.
 $$
-
----
 
 ## KKT Conditions and Their Effect
 
