@@ -1,1 +1,4 @@
-
+/* Force left alignment for blog post content */
+.post, .post-content, .post-body, .page-content, .entry-content, .markdown-body {
+    text-align: left !important;
+}
