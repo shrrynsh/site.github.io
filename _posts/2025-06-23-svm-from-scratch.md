@@ -8,7 +8,7 @@ categories: ml
 # Support Vector Machines
 
 
-**❓ SVMs: What are they and why are they used?**
+## ❓ SVMs: What are they and why are they used?##
 
 SVM is one of the most powerful supervised learning algorithms, primarily used for classification tasks. The main goal of SVM is to classify instances based on their relative position with a decision boundary (a **hyperplane**). SVMs work well for both linearly and non-linearly separable cases. Let's explore more about SVMs in this blog.
 
