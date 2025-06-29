@@ -7,8 +7,7 @@ categories: ml
 
 # Support Vector Machines
 
-
-## ❓ SVMs: What are they and why are they used?##
+## ❓ SVMs: What are they and why are they used?
 
 SVM is one of the most powerful supervised learning algorithms, primarily used for classification tasks. The main goal of SVM is to classify instances based on their relative position with a decision boundary (a **hyperplane**). SVMs work well for both linearly and non-linearly separable cases. Let's explore more about SVMs in this blog.
 
@@ -109,6 +108,8 @@ $\alpha_i\,[y_i\,(w \cdot x_i + b) - 1] = 0.$ For instances closest to the hyper
 $$y_i\,(w \cdot x' + b) - 1 = 0$$
 
 For such instances, $\alpha_i$ is positive and they are called **Support Vectors**. For all other instances, $\alpha_i$ is 0.
+
+---
 
 
 
