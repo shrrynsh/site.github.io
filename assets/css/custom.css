@@ -18,13 +18,21 @@
 }
 
 /* Force blog post container and heading to be left-aligned */
-.clean-post-layout {
+html body #main-container.clean-post-layout {
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin: 2rem 0 !important;
     max-width: 900px !important;
     width: 100% !important;
 }
-.post-content-wrapper h1 {
+
+@media (max-width: 768px) {
+  html body #main-container.clean-post-layout {
+    margin: 1rem 0 !important;
+    padding: 0 1rem !important;
+  }
+}
+
+html body #main-container .post-content-wrapper h1 {
     text-align: left !important;
 }
