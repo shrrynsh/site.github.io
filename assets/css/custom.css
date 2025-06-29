@@ -37,24 +37,17 @@ html body #main-container .post-content-wrapper h1 {
     text-align: left !important;
 }
 
-/* Blog content full width, flush left */
+/* Centered, readable blog column like the reference */
 html body #main-container.clean-post-layout,
 .clean-post-layout,
 .post-content-wrapper {
-    margin-left: 2rem !important;
-    margin-right: 2rem !important;
-    width: auto !important;
-    max-width: none !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    width: 100% !important;
     box-sizing: border-box !important;
-}
-
-@media (max-width: 600px) {
-  html body #main-container.clean-post-layout,
-  .clean-post-layout,
-  .post-content-wrapper {
-      margin-left: 1rem !important;
-      margin-right: 1rem !important;
-  }
 }
 
 /* Center main headings */
@@ -69,4 +62,23 @@ html body #main-container.clean-post-layout,
 .post-content-wrapper h5,
 .post-content-wrapper h6 {
     text-align: left !important;
+}
+
+/* Left-align normal text */
+.post-content-wrapper p,
+.post-content-wrapper ul,
+.post-content-wrapper ol,
+.post-content-wrapper pre,
+.post-content-wrapper blockquote {
+    text-align: left !important;
+}
+
+/* Responsive: reduce padding on mobile */
+@media (max-width: 600px) {
+  html body #main-container.clean-post-layout,
+  .clean-post-layout,
+  .post-content-wrapper {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+  }
 }
