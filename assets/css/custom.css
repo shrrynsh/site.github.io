@@ -83,12 +83,8 @@ body {
     background: #181818 !important;
 }
 
-/* Remove monospace font for math, use KaTeX/MathJax default */
-.katex, .katex * {
-    font-family: 'JetBrains Mono', 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
-    font-size: 1.1rem !important;
-    color: #f4d17c !important;
-}
+/* Remove math font overrides to use default MathJax serif font */
+/* (No font-family for mjx-container svg text or .katex) */
 
 /* Responsive: reduce padding on mobile */
 @media (max-width: 600px) {
