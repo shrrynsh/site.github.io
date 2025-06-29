@@ -44,8 +44,8 @@ html body #main-container.clean-post-layout,
     max-width: 800px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
@@ -78,7 +78,7 @@ html body #main-container.clean-post-layout,
   html body #main-container.clean-post-layout,
   .clean-post-layout,
   .post-content-wrapper {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
   }
 }
