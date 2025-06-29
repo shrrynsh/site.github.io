@@ -41,15 +41,15 @@ html body #main-container .post-content-wrapper h1 {
 html body #main-container.clean-post-layout,
 .clean-post-layout,
 .post-content-wrapper {
+    max-width: 90vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
     font-family: 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
     font-size: 1.1rem !important;
     background: #232323 !important;
     color: #f4d17c !important;
-    max-width: 740px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0.5vw !important;
-    padding-right: 0.5vw !important;
     width: 100% !important;
     box-sizing: border-box !important;
     border-radius: 8px !important;
@@ -95,7 +95,8 @@ body {
   html body #main-container.clean-post-layout,
   .clean-post-layout,
   .post-content-wrapper {
-      padding-left: 0.2vw !important;
-      padding-right: 0.2vw !important;
+      max-width: 98vw !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
   }
 }
