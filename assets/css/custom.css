@@ -41,13 +41,18 @@ html body #main-container .post-content-wrapper h1 {
 html body #main-container.clean-post-layout,
 .clean-post-layout,
 .post-content-wrapper {
-    max-width: 800px !important;
+    font-family: 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
+    font-size: 1.1rem !important;
+    background: #232323 !important;
+    color: #f4d17c !important;
+    max-width: 740px !important; /* matches zfyre's content width */
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 2.5vw !important;
+    padding-right: 2.5vw !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    border-radius: 8px !important;
 }
 
 /* Center main headings */
@@ -73,12 +78,24 @@ html body #main-container.clean-post-layout,
     text-align: left !important;
 }
 
+/* Make sure the page background is darker */
+body {
+    background: #181818 !important;
+}
+
+/* Ensure math font matches main font */
+.katex, .katex * {
+    font-family: 'Fira Mono', Menlo, Monaco, Consolas, monospace !important;
+    font-size: 1.1rem !important;
+    color: #f4d17c !important;
+}
+
 /* Responsive: reduce padding on mobile */
 @media (max-width: 600px) {
   html body #main-container.clean-post-layout,
   .clean-post-layout,
   .post-content-wrapper {
-      padding-left: 0.5rem !important;
-      padding-right: 0.5rem !important;
+      padding-left: 1vw !important;
+      padding-right: 1vw !important;
   }
 }
