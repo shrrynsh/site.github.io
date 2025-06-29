@@ -10,7 +10,7 @@ future: true
 
 # Author information
 author:
-  name: "Shreyansh"
+  name: "shreyansh"
   bio: "ML/DL researcher working with facial recognition models, GPU computing, and computer vision datasets"
   location: "India"
   links:
@@ -19,7 +19,7 @@ author:
       url: "https://github.com/shrrynsh"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/yourusername"
+      url: "https://x.com/shrrynsh"
 
 # Site settings
 lang: en-US
@@ -37,12 +37,12 @@ paginate_path: "/page:num"
 
 # SEO and social
 twitter:
-  username: yourusername
+  username: shrrynsh
 social:
   name: Shreyansh
   links:
     - "https://github.com/shrrynsh"
-    - "https://twitter.com/yourusername"
+    - "https://x.com/shrrynsh"
 
 # Plugins supported by GitHub Pages
 plugins:
