@@ -25,16 +25,12 @@ categories: ml
 
 The main goal of SVMs is to find the best decision boundary, referred to as the <strong>optimal hyperplane</strong>. Once we have the hyperplane, we can make classifications based on the hypothesis function defined as:
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$
 h(x_i) = \begin{cases}
 +1, & \text{if } w \cdot x + b \ge 0,\\
 -1, & \text{if } w \cdot x + b < 0.
 \end{cases}
 $$
-
-</div>
 
 Let's understand what a hyperplane is and how to compare hyperplanes.
 
@@ -58,11 +54,7 @@ To select the best hyperplane, we compare them using two metrics: <strong>Functi
 
 Define $f = y(w \cdot x + b)$. Positive for correct classifications, negative for misclassifications. The functional margin is:
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$F = \min_{i=1,\dots,m} \bigl(y_i (w \cdot x + b)\bigr).$$
-
-</div>
 
 The best hyperplane has the maximum functional margin.
 
@@ -70,11 +62,7 @@ The best hyperplane has the maximum functional margin.
 
 A scaled version of the functional margin:
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$G = \min_{i=1,\dots,m} \Bigl( y_i \bigl(\frac{w}{\|w\|} \cdot x + \frac{b}{\|w\|}\bigr)\Bigr) = \frac{F}{\|w\|}$$
-
-</div>
 
 ---
 
@@ -84,8 +72,6 @@ $$G = \min_{i=1,\dots,m} \Bigl( y_i \bigl(\frac{w}{\|w\|} \cdot x + \frac{b}{\|w
 
 To find the optimal hyperplane, we maximize the geometric margin $G$ subject to constraints:
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$
 \begin{aligned}
 \max_{w,b} \quad & G \\
@@ -93,11 +79,7 @@ $$
 \end{aligned}
 $$
 
-</div>
-
 Rearranging and scaling leads to the final primal problem:
-
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
 
 $$
 \begin{aligned}
@@ -105,8 +87,6 @@ $$
 \text{subject to}\quad & y_i(w.x_i+b)-1 \ge 0, \quad i = 1,\dots,m.
 \end{aligned}
 $$
-
-</div>
 
 ---
 
@@ -116,15 +96,9 @@ $$
 
 Now we can form the Lagrangian from the primal problem:
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$L(w, b, \alpha) = \frac{1}{2}\,w \cdot w - \sum_{i=1}^{m} \alpha_i \bigl[y_i\,(w \cdot x_i + b) - 1\bigr].$$
 
-</div>
-
 Taking gradients and setting to zero gives:
-
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
 
 $$
 \nabla_w L(w, b, \alpha) = w - \sum_{i=1}^{m} \alpha_i\,y_i\,x_i = 0 \Rightarrow w= \sum_{i=1}^{m} \alpha_i\,y_i\,x_i
@@ -134,11 +108,7 @@ $$
 \nabla_b L(w, b, \alpha) = -\sum_{i=1}^{m} \alpha_i\,y_i = 0 \Rightarrow \sum_{i=1}^{m} \alpha_i\,y_i = 0
 $$
 
-</div>
-
 Plugging $w$ back gives the dual problem:
-
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
 
 $$
 D(\alpha, b) = \sum_{i=1}^m \alpha_i- \frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m
@@ -150,8 +120,6 @@ $$
 \quad\text{and}\quad
 \sum_{i=1}^{m} \alpha_i \, y_i = 0.
 $$
-
-</div>
 
 ---
 
@@ -167,11 +135,7 @@ Both hold due to the constraints imposed.
 
 $\alpha_i\,[y_i\,(w \cdot x_i + b) - 1] = 0.$ For instances closest to the hyperplane ($x'$):
 
-<div style="background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.05) 100%); border: 2px solid rgba(255,193,7,0.2); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; box-shadow: 0 8px 24px rgba(255,193,7,0.1);">
-
 $$y_i\,(w \cdot x' + b) - 1 = 0$$
-
-</div>
 
 For such instances, $\alpha_i$ is positive and they are called <strong>Support Vectors</strong>. For all other instances, $\alpha_i$ is 0.
 
