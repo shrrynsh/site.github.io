@@ -13,6 +13,7 @@ body {
   color: var(--text-secondary);
   font-family: 'Fira Code', 'Courier New', monospace;
   line-height: 1.6;
+  font-size: 1.54rem !important;
 }
 
 #hero, #about, #weekly-reads, .post-container {
