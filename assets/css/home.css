@@ -233,8 +233,6 @@ a:hover {
 
 .post-content h2 {
   font-size: 1.8rem;
-  border-bottom: 2px solid var(--accent, #ffc107);
-  padding-bottom: 0.5rem;
 }
 
 .post-content h3 {
