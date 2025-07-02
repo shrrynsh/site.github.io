@@ -20,16 +20,16 @@ body {
   max-width: 800px;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 0.6rem !important;
-  padding-right: 0.6rem !important;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
 }
 
 #hero {
   text-align: center;
   max-width: 800px;
   margin: 4rem auto;
-  padding-left: 0.6rem !important;
-  padding-right: 0.6rem !important;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
 }
 
 #hero p {
@@ -146,8 +146,8 @@ a:hover {
 .post-container {
   max-width: 800px;
   margin: 2rem auto;
-  padding-left: 0.6rem !important;
-  padding-right: 0.6rem !important;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
   background: var(--bg-dark, #1a1a1a);
   color: var(--text-secondary, #e4e4e4);
 }
