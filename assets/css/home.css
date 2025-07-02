@@ -44,7 +44,7 @@ body {
 
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 4.2rem !important;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-weight: bold;
