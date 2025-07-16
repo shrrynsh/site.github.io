@@ -116,8 +116,9 @@
       width: 100%;
       max-width: 900px;
       margin: 2rem auto;
-      padding: 0 2rem;
+      padding: 0 1rem;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
 
     .content-wrapper {
@@ -127,6 +128,7 @@
       word-wrap: break-word;
       overflow-wrap: break-word;
       padding: 0;
+      overflow-x: hidden;
     }
 
     /* Content container fixes */
@@ -134,21 +136,24 @@
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
-      padding: 0;
+      padding: 0 1rem;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
 
-    /* Font size adjustments */
+    /* Font size adjustments for consistency */
     body, html {
       font-size: 16px;
+      overflow-x: hidden;
+      width: 100%;
     }
 
-    /* Heading sizes */
-    h1 { font-size: 2.5rem !important; }
-    h2 { font-size: 2rem !important; }
-    h3 { font-size: 1.75rem !important; }
-    h4 { font-size: 1.5rem !important; }
-    h5, h6 { font-size: 1.25rem !important; }
+    /* Heading sizes - keeping them consistent */
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    h3 { font-size: 1.5rem !important; }
+    h4 { font-size: 1.25rem !important; }
+    h5, h6 { font-size: 1.1rem !important; }
 
     /* Body text size */
     p, span, div, li {
@@ -156,41 +161,54 @@
       line-height: 1.6 !important;
     }
 
-    /* Footer text size */
-    .footer-section h3 {
-      font-size: 1.2rem !important;
+    /* Post title consistency */
+    .post-title, 
+    h1.post-title {
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1rem !important;
     }
 
-    .footer-section li {
-      font-size: 1rem !important;
+    /* Images and media */
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
     }
 
-    .footer-bottom {
-      font-size: 0.9rem !important;
+    /* Code blocks */
+    pre {
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
 
-    /* Content spacing */
-    .content-wrapper > * + * {
-      margin-top: 1.5rem;
-    }
-
-    p + p {
-      margin-top: 1rem;
+    /* Tables */
+    table {
+      max-width: 100%;
+      overflow-x: auto;
+      display: block;
     }
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
       body, html {
-        font-size: 13px;
+        font-size: 15px;
       }
       
       .main-content {
-        padding: 1rem 0.5rem;
+        padding: 1rem;
       }
       
       pre, code {
-        font-size: 0.8rem !important;
+        font-size: 0.9rem !important;
       }
+
+      h1 { font-size: 1.75rem !important; }
+      h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.25rem !important; }
+      h4 { font-size: 1.1rem !important; }
+      h5, h6 { font-size: 1rem !important; }
     }
 
     /* ===== ENHANCED DARK THEME OVERRIDE STYLES ===== */
@@ -517,111 +535,75 @@ li {
 }
 
 /* Footer container */
-.footer-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 2rem 1rem;
-}
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+    }
 
-/* Footer Styles */
-.main-footer {
-  background: var(--card-bg, #2a2a2a);
-  border-top: 1px solid var(--border, #333);
-  margin-top: 4rem;
-}
+    /* Footer Styles */
+    .main-footer {
+      background: var(--card-bg, #2a2a2a);
+      border-top: 1px solid var(--border, #333);
+      margin-top: 4rem;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.footer-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding: 2rem 0;
+    }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding: 2rem 0;
-}
+    .footer-section {
+      min-width: 0;
+    }
 
-.footer-section h3 {
-  color: var(--text-primary, #f4d17c);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
+    .footer-section h3 {
+      color: var(--text-primary, #f4d17c);
+      margin-bottom: 1rem;
+      font-size: 1.1rem !important;
+    }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.footer-section li {
-  margin-bottom: 0.5rem;
-  color: var(--text-secondary, #e4e4e4);
-  font-size: 0.9rem;
-}
+    .footer-section li {
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary, #e4e4e4);
+      font-size: 0.9rem !important;
+    }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.social-link {
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+    }
 
-.social-link:hover {
-  background: var(--accent, #ffc107);
-}
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border, #333);
+    }
 
-.footer-icon {
-  width: 24px;
-  height: 24px;
-  color: var(--accent, #ffc107);
-}
-
-.social-link:hover .footer-icon {
-  color: var(--bg-dark, #1a1a1a);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border, #333);
-}
-
-.footer-bottom p {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-
-.footer-tagline {
-  font-style: italic;
-  margin-top: 0.5rem;
-}
-
-/* Footer mobile responsiveness */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .footer-container {
-    padding: 1rem 0.5rem;
-  }
-}
+    .footer-bottom p {
+      color: #888;
+      font-size: 0.9rem !important;
+      margin: 0.5rem 0;
+    }
   </style>
 
   <!-- Theme Detection Script -->
