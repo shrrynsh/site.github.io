@@ -114,22 +114,23 @@
     .main-content {
       min-height: calc(100vh - 120px);
       width: 100%;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1200px; /* Increased from 900px */
+      margin: 0 auto;
+      padding: 2rem 1rem;
       box-sizing: border-box;
       overflow-x: hidden;
     }
 
     .content-wrapper {
-      max-width: 800px;
+      width: 100%;
+      max-width: 1000px; /* Increased from 800px */
       margin: 0 auto;
       word-wrap: break-word;
       overflow-wrap: break-word;
-      padding: 0 1rem;
+      padding: 0;
     }
 
-    /* Content alignment fixes */
+    /* Content sizing fixes */
     .content-wrapper p,
     .content-wrapper ul,
     .content-wrapper ol,
@@ -137,9 +138,11 @@
     .content-wrapper div,
     .content-wrapper section {
       text-align: left;
+      width: 100%;
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
+      box-sizing: border-box;
     }
 
     /* Image responsiveness */
@@ -150,12 +153,34 @@
       margin: 1rem auto;
     }
 
-    /* Code block responsiveness */
-    .content-wrapper pre {
+    /* Code block and pre adjustments */
+    .content-wrapper pre,
+    .content-wrapper code {
       max-width: 100%;
       overflow-x: auto;
       white-space: pre-wrap;
       word-wrap: break-word;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+
+    /* Math content adjustments */
+    .MathJax_Display {
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      font-size: 16px !important;
+    }
+
+    /* Table adjustments */
+    .content-wrapper table {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      border-collapse: collapse;
+      margin: 1rem 0;
     }
 
     /* Footer Styles */
@@ -564,15 +589,17 @@ body, html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  min-width: 320px;
 }
 
 /* Content container fixes */
 #main-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Post content fixes */
@@ -581,6 +608,8 @@ body, html {
   max-width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 /* Table responsiveness */
