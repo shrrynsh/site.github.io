@@ -116,34 +116,46 @@
       width: 100%;
       max-width: 900px;
       margin: 2rem auto;
-      padding: 0 2rem;
+      padding: 0 1rem;
       box-sizing: border-box;
-      /* Removed text-align: center for better readability */
-    }
-
-    /* Center only headings and special elements */
-    .main-content h1,
-    .main-content h2,
-    .main-content h3,
-    .main-content .centered,
-    .main-content .profile-pic {
-      text-align: center;
+      overflow-x: hidden;
     }
 
     .content-wrapper {
-      max-width: 650px;
+      max-width: 800px;
       margin: 0 auto;
-      word-break: break-word;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      padding: 0 1rem;
     }
 
-    .content-wrapper, 
-    .content-wrapper p, 
-    .content-wrapper ul, 
-    .content-wrapper ol, 
-    .content-wrapper li, 
-    .content-wrapper div, 
+    /* Content alignment fixes */
+    .content-wrapper p,
+    .content-wrapper ul,
+    .content-wrapper ol,
+    .content-wrapper li,
+    .content-wrapper div,
     .content-wrapper section {
-      text-align: left !important;
+      text-align: left;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    /* Image responsiveness */
+    .content-wrapper img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    /* Code block responsiveness */
+    .content-wrapper pre {
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
 
     /* Footer Styles */
@@ -546,6 +558,51 @@
       margin-right: auto;
     }
 
+    /* Base container fixes */
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Content container fixes */
+#main-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Post content fixes */
+.post-content {
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Table responsiveness */
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Mathematic equations responsiveness */
+.MathJax_Display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Link text wrapping */
+a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
   </style>
 
   <!-- Theme Detection Script -->
