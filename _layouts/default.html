@@ -114,20 +114,30 @@
     .main-content {
       min-height: calc(100vh - 120px);
       width: 100%;
-      max-width: 1200px; /* Increased from 900px */
+      max-width: 1600px; /* Increased significantly from 1200px */
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2rem 2rem;
       box-sizing: border-box;
       overflow-x: hidden;
     }
 
     .content-wrapper {
       width: 100%;
-      max-width: 1000px; /* Increased from 800px */
+      max-width: 1400px; /* Increased significantly from 1000px */
       margin: 0 auto;
       word-wrap: break-word;
       overflow-wrap: break-word;
       padding: 0;
+    }
+
+    /* Content container fixes */
+    #main-container {
+      width: 100%;
+      max-width: 1600px; /* Match main-content */
+      margin: 0 auto;
+      padding: 0 2rem;
+      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     /* Content sizing fixes */
@@ -143,6 +153,7 @@
       margin-left: 0;
       margin-right: 0;
       box-sizing: border-box;
+      padding: 0;
     }
 
     /* Image responsiveness */
@@ -176,11 +187,10 @@
     .content-wrapper table {
       width: 100%;
       max-width: 100%;
+      margin: 1rem 0;
       display: block;
       overflow-x: auto;
-      white-space: nowrap;
       border-collapse: collapse;
-      margin: 1rem 0;
     }
 
     /* Footer Styles */
@@ -191,7 +201,7 @@
     }
 
     .footer-container {
-      max-width: 1200px;
+      max-width: 1600px; /* Match main content width */
       margin: 0 auto;
       padding: 3rem 2rem 1rem;
     }
@@ -309,9 +319,16 @@
       .social-links {
         justify-content: center;
       }
-      .main-content {
-        max-width: 100%;
-        padding: 0 0.5rem;
+      .main-content,
+      .content-wrapper,
+      #main-container {
+        padding: 1rem;
+      }
+      
+      .content-wrapper pre {
+        margin: 1rem -1rem;
+        padding: 1rem;
+        width: calc(100% + 2rem);
       }
     }
 
@@ -586,20 +603,10 @@
     /* Base container fixes */
 body, html {
   width: 100%;
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
   min-width: 320px;
-}
-
-/* Content container fixes */
-#main-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 /* Post content fixes */
@@ -609,28 +616,36 @@ body, html {
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
-  padding: 0 1rem;
 }
 
-/* Table responsiveness */
-table {
-  width: 100%;
+/* Ensure all content is properly contained */
+*, *::before, *::after {
+  box-sizing: border-box;
   max-width: 100%;
-  overflow-x: auto;
+}
+
+/* Text wrapping for all elements */
+h1, h2, h3, h4, h5, h6, p, li, a, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Image containment */
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Mathematic equations responsiveness */
-.MathJax_Display {
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-/* Link text wrapping */
-a {
+/* Code blocks and pre elements */
+pre, code {
+  white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  max-width: 100%;
 }
   </style>
 
