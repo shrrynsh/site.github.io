@@ -4,7 +4,9 @@
 <body>
   <!-- Main Content Area -->
   <main class="main-content">
-    {{ content }}
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
   </main>
 
   <!-- Enhanced Footer -->
@@ -117,6 +119,12 @@
       padding: 0 2rem;
       box-sizing: border-box;
       text-align: center;
+    }
+
+    .content-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+      word-break: break-word;
     }
 
     /* Footer Styles */
