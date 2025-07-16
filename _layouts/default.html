@@ -114,16 +114,15 @@
     .main-content {
       min-height: calc(100vh - 120px);
       width: 100%;
-      max-width: 2000px; /* Increased from 1600px */
-      margin: 0 auto;
-      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
       box-sizing: border-box;
-      overflow-x: hidden;
     }
 
     .content-wrapper {
       width: 100%;
-      max-width: 1800px; /* Increased from 1400px */
+      max-width: 800px;
       margin: 0 auto;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -133,82 +132,50 @@
     /* Content container fixes */
     #main-container {
       width: 100%;
-      max-width: 2000px; /* Match main-content */
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 1rem;
-      overflow-x: hidden;
+      padding: 0;
       box-sizing: border-box;
     }
 
     /* Font size adjustments */
     body, html {
-      font-size: 14px; /* Base font size reduced */
+      font-size: 16px;
     }
 
     /* Heading sizes */
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.5rem !important; }
-    h3 { font-size: 1.3rem !important; }
-    h4 { font-size: 1.1rem !important; }
-    h5, h6 { font-size: 1rem !important; }
-
-    /* Post title size */
-    .post-title, 
-    h1.post-title {
-      font-size: 2rem !important;
-    }
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    h3 { font-size: 1.75rem !important; }
+    h4 { font-size: 1.5rem !important; }
+    h5, h6 { font-size: 1.25rem !important; }
 
     /* Body text size */
     p, span, div, li {
-      font-size: 0.9rem !important;
-      line-height: 1.5 !important;
-    }
-
-    /* Code block adjustments */
-    pre, code {
-      font-size: 0.85rem !important;
-      line-height: 1.4 !important;
-      padding: 0.75rem !important;
-    }
-
-    /* Table text size */
-    table, th, td {
-      font-size: 0.85rem !important;
-    }
-
-    /* Footer text adjustments */
-    .footer-section h3 {
       font-size: 1rem !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Footer text size */
+    .footer-section h3 {
+      font-size: 1.2rem !important;
     }
 
     .footer-section li {
-      font-size: 0.85rem !important;
+      font-size: 1rem !important;
     }
 
     .footer-bottom {
-      font-size: 0.8rem !important;
+      font-size: 0.9rem !important;
     }
 
-    /* Content sizing fixes */
-    .content-wrapper p,
-    .content-wrapper ul,
-    .content-wrapper ol,
-    .content-wrapper li,
-    .content-wrapper div,
-    .content-wrapper section {
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Improve content spacing */
+    /* Content spacing */
     .content-wrapper > * + * {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     p + p {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
 
     /* Mobile adjustments */
@@ -499,110 +466,61 @@ body, html {
   width: 100%;
   margin: 0;
   padding: 0;
-  min-width: 320px;
-  overflow-x: hidden;
 }
 
-/* Post content fixes */
+/* Post content */
 .post-content {
   width: 100%;
   max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Ensure all content is properly contained */
-*, *::before, *::after {
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-/* Text wrapping for all elements */
-h1, h2, h3, h4, h5, h6, p, li, a, span {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-/* Image containment */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Code blocks and pre elements */
-pre, code {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
-
-/* Text display optimizations */
-* {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Ensure proper text wrapping */
+/* Text formatting */
 p, li, a, span, div {
-  overflow-wrap: break-word;
   word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
-/* Code block improvements */
+/* Code blocks */
 pre {
-  tab-size: 2;
-  -moz-tab-size: 2;
-  white-space: pre;
   overflow-x: auto;
-  max-width: 100%;
-  padding: 0.75rem !important;
-  margin: 1rem 0 !important;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
 }
 
 code {
-  font-size: 0.85rem !important;
-  padding: 0.2rem 0.4rem !important;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.4rem;
 }
 
-/* Table improvements */
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem !important;
 }
 
 th, td {
-  padding: 0.5rem;
+  padding: 0.75rem;
   text-align: left;
 }
 
-/* List spacing */
+/* Lists */
 ul, ol {
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
+  padding-left: 2rem;
+  margin: 1rem 0;
 }
 
-li + li {
-  margin-top: 0.25rem;
+li {
+  margin-bottom: 0.5rem;
 }
 
-/* Link improvements */
-a {
-  font-size: 0.9rem !important;
-  text-decoration: none;
+/* Footer container */
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 1rem;
 }
   </style>
 
