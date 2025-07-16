@@ -3,10 +3,32 @@ layout: home
 title: Home
 ---
 
-<!-- This content will be inserted into the {{ content }} section of your home.html layout -->
+<div class="about-section">
+  <h2>Who am I?</h2>
+  <p>I am interested in Computer Vision, Deep Learning, and AI Development. Currently exploring advanced areas in Computer Vision and Machine Learning.</p>
+  <p>Apart from AI stuff I also like to build products and explore new technologies.</p>
+</div>
 
-<section id="additional-content">
-  <h2>All Posts Archive</h2>
+<div class="recent-work">
+  <h2>Recent Work</h2>
+  <div class="work-items">
+    <div class="work-item">
+      <h3>Generative Adversarial Networks</h3>
+      <p>Exploring and implementing various GAN architectures for image generation.</p>
+    </div>
+    <div class="work-item">
+      <h3>Diffusion Models</h3>
+      <p>Research and implementation of state-of-the-art diffusion models.</p>
+    </div>
+    <div class="work-item">
+      <h3>Vision Language Models</h3>
+      <p>Working on multimodal systems combining vision and language.</p>
+    </div>
+  </div>
+</div>
+
+<section id="blog-posts">
+  <h2>Latest Posts</h2>
   <div class="posts-archive">
     {% for post in site.posts %}
       <div class="archive-item">
@@ -72,6 +94,14 @@ title: Home
   white-space: nowrap;
 }
 
+#blog-posts {
+  margin-top: 4rem;
+}
+
+#blog-posts h2 {
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 600px) {
   .archive-item {
     flex-direction: column;
@@ -84,3 +114,4 @@ title: Home
   }
 }
 </style>
+
