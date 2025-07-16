@@ -66,6 +66,11 @@ layout: default
   </div>
 </section>
 
+<!-- Content Section -->
+<div class="content-section">
+  {{ content }}
+</div>
+
 <!-- Include custom CSS and JS -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="{{ '/assets/js/home.js' | relative_url }}"></script>
@@ -144,6 +149,40 @@ layout: default
 
 .view-all-link:hover {
   text-decoration: underline;
+}
+
+/* Content Section Styles */
+.content-section {
+  margin-top: 2rem;
+}
+
+.posts-archive {
+  margin-top: 2rem;
+}
+
+.archive-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.archive-item:hover {
+  transform: translateY(-2px);
+}
+
+.archive-link {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.5rem;
+}
+
+.archive-date {
+  font-size: 0.9rem;
+  color: #888;
 }
 </style>
 
